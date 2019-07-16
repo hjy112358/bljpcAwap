@@ -1,0 +1,356 @@
+*{
+    font-size: 12px;
+}
+.addfreight{
+    display: inline-block;
+    padding:0 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #3BAEDA;
+    background-color: #f9f9f9;
+    border: 1px solid #4FC0E8;
+}
+.addfreight:hover{
+    color: #3BAEDA;
+}
+
+
+/* 新增模板 */
+.afreightitle{
+    color:#333;
+    font-size: 16px;
+}
+.afreightbox form .formbox>select{
+    color: #999;
+    background: #FFF;
+    vertical-align: middle;
+    padding: 0 4px;
+    border: solid 1px #E6E9EE;
+    height:30px;
+    width:155px;
+    margin-right: 5px;
+}
+
+.afreightbox form .formbox>input{
+    font: 12px/20px Arial;
+    color: #777;
+    background-color: #FFF;
+    vertical-align: top;
+    display: inline-block;
+    height: 30px;
+    padding: 4px;
+    border: solid 1px #E6E9EE;
+    outline: 0 none;
+}
+.afreightbox form .formbox>label{
+    height: 30px;
+    line-height: 30px;
+    width: 80px;
+    text-align: left;
+    display: inline-block;
+    color: #999;
+    font-size: 13px;
+}
+.afreightbox form .formbox>label i{
+    color:#f00;
+    font-style:normal
+}
+
+.errmsg{
+    color:#f00;
+    display: block;
+    margin-left: 85px;
+    line-height: 25px;
+    height: 25px;
+}
+.afreightbox form .tip{
+    color:#999
+}
+.radio-inline{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 20px;
+}
+.radio-inline input{
+    vertical-align: text-bottom;
+}
+.radio-inline label{
+    color:#999
+}
+.formboxradio .errmsg{
+    height:20px;
+    line-height: 20px;
+}
+.formboxleft{
+    float:left;
+}
+.formboxright{
+    display: inline-block;
+    float: left;
+    margin-top: -5px;
+}
+.formboxright p{
+    color:#999;
+}
+.checkbox-inline {
+    color:#999;
+   
+}
+form{
+    margin-left: 15px;
+}
+.checkbox-inline label{
+    height: 25px;
+    line-height: 25px
+}
+.checkbox-inline input{
+    vertical-align: middle;
+}
+.addcondition{
+    border:1px solid #E6E9EE;
+    padding:5px;
+}
+.basecondition p{
+    color:#999
+}
+.basecondition p input{
+    width:64px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: solid 1px #E6E9EE;
+}
+.opabtn {
+    margin:5px 0;
+}
+.opabtn span{
+    color:#4FC0E8;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.basecondition{
+    padding: 8px 3px;
+    background-color: #e8f2ff;
+}
+.basecondition p{
+    margin:0
+}
+.addconditionbox{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5), 1px -2px 4px 0 rgba(0,0,0,.3);
+}
+.conditionlist table {
+    color:#999;
+    border-collapse: collapse;
+}
+.conditionlist table th{
+    font-weight: bold;
+    padding:5px;
+}
+.conditionlist table input{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    border: solid 1px #E6E9EE;
+   
+}
+.conditionlist table td{
+    text-align: center;
+    padding:5px;
+}
+.conditionlist table thead{
+    height: 30px;
+    line-height: 30px;
+    background: #f5f5f5;
+}
+.conditionlist table a,.conditionlist table a:hover{
+    color:#4FC0E8;
+    text-decoration: none;
+}
+.formboxbottom{
+    overflow: hidden;
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+}
+.conditionlist table td select{
+    color: #999;
+    background: #FFF;
+    vertical-align: middle;
+    padding: 0 4px;
+    border: solid 1px #E6E9EE;
+    height: 30px;
+    width: 100px;
+    margin-right: 5px;
+}
+.apointbtn a{
+    color: #388be8;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px
+}
+tr{
+    border-bottom: solid 1px #E6E9EE;
+}
+.hidden{
+    display: none !important
+}
+.mark{
+    position: fixed;
+    background:rgba(0,0,0,.5);
+    z-index: 10;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+}
+.chooseCity{
+    width:600px;
+    background:#fff;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+}
+.cityTitle{
+    border-bottom: solid 1px #eee;
+    background-color: #f9f9f9;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.cityTitle .close{
+    float: right;
+    font-weight: normal;
+    color: #ccc;
+    width: 52px;
+    text-align: center;
+    text-decoration: none;
+    border-left: 1px solid #ccc;
+}
+.citybox ul{
+    overflow: hidden;
+    padding:0 10px;
+}
+.citybox ul li{
+    list-style: none;
+    width:33%;
+    float:left;
+    position: relative;
+}
+.citybox ul li .checkinput{
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 15px
+}
+.citybox ul li input{
+    vertical-align: middle
+}
+.showlist{
+    margin-left:6px;
+}
+.showlistbtn{
+    display:inline-block
+}
+.affiliattelist{
+    padding: 5px;
+    background-color: #FFFEC6;
+    border: 1px solid #f7e4a5;
+    border-top: none;
+    z-index: 3;
+    width: 170px;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+}
+.affiliattewrap{
+    display: inline-block;
+}
+.affiliattewrap.active{
+    background-color: #FFFEC6;
+    border: 1px solid #f7e4a5;
+    
+    border-bottom: 0;
+}
+.affiliattewrap label{
+    padding-right:10px;
+}
+.btnlist{
+    float: right;
+    padding-right: 20px;
+    padding:20px 0;
+}
+.btnlist a,.btnlist a:hover{
+    color: #000;
+    text-decoration: none;
+    margin-right: 5px;
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 5px;
+}
+.btnlist .save{
+    background:#f00;
+    color:#fff;
+}
+.btnlist .save:hover{
+    color:#fff;
+}
+
+
+
+.teplistbox .conditionlist  tr td{
+    text-align: left;
+}
+.teplistbox .addconditionbox {
+    box-shadow: none    
+}
+.teplist ul li{
+    width:600px;
+}
+.teplist .addcondition{
+    padding:0;
+    border:none;
+}
+.teplist th,.teplist td{
+    border: 1px solid #bbb;
+}
+.teplist .basecondition{
+    border:1px solid #bbb;
+    border-bottom:none;
+    width:592px;
+}
+.teplist .basecondition .tepname{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+}
+.teplist .basecondition span{
+    font-size: 14px;
+    color: grey;
+    margin-right: 10px;
+}
+.teplist .basecondition a{
+    font-size: 14px;
+    color:#3BAEDA;
+    margin-right: 5px;
+}
+.teplist{
+    margin-top:20px;
+}
+.teplist ul li{
+    margin-bottom:10px
+}
+.addnewbtn a{
+    background: #ff4c4c;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 55px;
+    line-height: 25px;
+    height: 25px;
+    text-align: center;
+    border-radius: 6px;
+    margin-top: 20px;
+}

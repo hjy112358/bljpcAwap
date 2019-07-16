@@ -1,0 +1,147 @@
+<include file="public/head" />
+
+<div class="ncsc-layout wrapper">
+    <include file="public/left" />
+    <div id="layoutRight" class="ncsc-layout-right">
+        <div class="ncsc-path"><i class="icon-desktop"></i>商家管理中心<i class="icon-angle-right"></i>店铺<i
+                class="icon-angle-right"></i>店铺导航</div>
+        <div class="main-content" id="mainContent">
+
+            <div class="tabmenu">
+                <ul class="tab pngFix">
+                    <li class="normal"><a href="{:U('Store/store_banner')}">导航列表</a></li>
+                    <li class="active"><a
+                            href="http://www.shopnc.com/index.php?act=store_navigation&op=navigation_add">添加导航</a></li>
+                </ul>
+            </div>
+            <div class="ncsc-form-default">
+                <form method="post" id="handleposition" action="{:U('Store/add_banner')}" target="_parent"
+                    name="store_navigation_form" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{$banner_detail.id}">
+                    <input type="hidden" name="store_id" value="{$store_id}">
+                    <dl>
+                        <dt><i class="required">*</i>导航名称：</dt>
+                        <dd>
+                            <input type="text" class="w150 text" name="banner_name"
+                                value="{$banner_detail.banner_name}" /><span></span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>是否显示：</dt>
+                        <dd>
+                            <ul class="ncsc-form-radio-list">
+                                <li>
+                                    <label for="is_show_0"><input type="radio" class="radio" name="is_show"
+                                            id="is_show_0" value="1" <if condition="$banner_detail[is_show] eq 1">
+                                        checked="checked"</if>/>
+                                        是</label></li>
+                                <li>
+                                    <label for="is_show_1"><input type="radio" class="radio" name="is_show"
+                                            id="is_show_1" value="0" <if condition="$banner_detail[is_show] eq 0">
+                                        checked="checked"</if>/>
+                                        否</label></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>排序：</dt>
+                        <dd>
+                            <input type="text" class="w50 text" name="sort" value="{$banner_detail.sort}" />
+                        </dd>
+                    </dl>
+
+                    <dl>
+                        <dt>上传图片： </dt>
+                        <dd>
+                            <div class="ncsc-upload-thumb store-logo" nctype="store_label">
+                                <p><img height="60" id="banner_url"
+                                        src="<empty name='banner_detail.banner_url'>__PUBLIC__/images/not_adv.jpg<else/>{$banner_detail.banner_url}</empty>">
+                                </p>
+                            </div>
+                            <div class="ncsc-upload-btn">
+                                <span>
+                                    <input type="hidden" value="{$banner_detail.banner_url}" name="banner_url">
+                                    <input type="file" name="file_avatar" id="file_avatar" style="display: none;">
+                                </span>
+                                <a onclick="imguploads()">
+                                    <p><i class="icon-upload-alt"></i>图片上传</p>
+                                </a>
+                            </div>
+                            <p class="hint">此处为店铺方形头像；<br /><span
+                                    style="color:orange;">建议使用宽100像素*高100像素内的方型图片；点击下方"提交"按钮后生效。</span>
+                            </p>
+                        </dd>
+                    </dl>
+
+
+                    <div class="bottom">
+                        <label class="submit-border"><input type="button" onclick="adsubmit()" class="submit"
+                                value="提交" /></label>
+                    </div>
+                </form>
+            </div>
+            <script>
+                function adsubmit() {
+                    if ($('input[name=sn_title]').val() == '') {
+                        layer.msg('请填写导航名称', { icon: 2 });
+                        return false;
+                    }
+
+                    $('#handleposition').submit();
+                }
+
+
+
+            </script>
+        </div>
+    </div>
+</div>
+<script>
+        var file_avatar = document.getElementById("file_avatar");
+        function imguploads() {
+          file_avatar.click();
+        }
+      file_avatar.onchange = function (){
+      var items = $('#file_avatar')[0].files[0];
+      var filename = items.name;
+      var filesize = items.size;
+      var filetype = filename.substring(filename.lastIndexOf(".")+1).toLowerCase();
+      if(filetype !="jpg" && filetype !="jpeg"  && filetype !="png"&&filetype !="gif"){
+          alert("请选择图片格式文件上传(jpg,png,jpeg,gif)！");
+          return false;
+      } 
+      if(filesize >1*1024*1024){
+          alert('单文件最大1M');
+          return false;
+      }
+
+      var formData = new FormData();
+      formData.append('file_avatar',$("#file_avatar")[0].files[0]);
+
+      $.ajax({
+        url:"{:U('/admin/Uploadify/uploadsfile_avatar')}",
+        type:'POST',
+        data:formData,
+        dataType:'JSON',
+        processData:false,
+        cache: false,  
+        contentType: false,
+        success:function(ret){
+          if(ret == 0){
+            alert("图片上传失败！");
+            return false;
+          }else{
+            
+            $("input[name='banner_url']").val(ret);
+            $("#banner_url").attr('src',ret);
+          }
+        }
+      })
+}
+        
+
+      </script>
+<include file="public/foot" />
+</body>
+
+</html>

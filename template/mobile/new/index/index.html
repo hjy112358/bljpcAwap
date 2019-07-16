@@ -1,0 +1,656 @@
+<!DOCTYPE html >
+<html>
+<head>
+  <meta name="Generator" content="TPshop v1.1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <!-- <title>首页-{$tpshop_config['shop_info_store_title']}</title> -->
+  <title></title>
+  <meta http-equiv="keywords" content="{$tpshop_config['shop_info_store_keyword']}" />
+  <meta name="description" content="{$tpshop_config['shop_info_store_desc']}" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+  <link rel="stylesheet" type="text/css" href="__STATIC__/css/index.css?time=<?php echo time()?>" />
+  <link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+  <script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/jquery.json.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/touchslider.dev.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+  <script src="__PUBLIC__/js/global.js"></script>
+  <script src="__PUBLIC__/js/mobile_common.js"></script>
+  <script type="text/javascript" src="__STATIC__/js/mui.min.js"></script>
+  <!-- <script>
+    var height = window.innerHeight + "px";  //获取页面实际高度  
+    var width = window.innerWidth + "px";
+    document.getElementById("bcid").style.height = height;
+    document.getElementById("bcid").style.width = width;
+    scan = null;//扫描对象  
+    mui.plusReady(function () {  //通过mui初始化扫描
+      mui.init();
+      startRecognize();
+    });
+
+    function startRecognize() {  //开启扫描
+      try {
+        var filter;
+        //自定义的扫描控件样式  
+        var styles = { frameColor: "#29E52C", scanbarColor: "#29E52C", background: "" }
+        //扫描控件构造  
+        scan = new plus.barcode.Barcode('bcid', filter, styles);
+        scan.onmarked = onmarked;
+        scan.onerror = onerror;  //扫描错误
+        scan.start();
+        //打开关闭闪光灯处理  
+        var flag = false;
+        document.getElementById("turnTheLight").addEventListener('tap', function () {
+          if (flag == false) {
+            scan.setFlash(true);
+            flag = true;
+          } else {
+            scan.setFlash(false);
+            flag = false;
+          }
+        });
+      } catch (e) {
+        alert("出现错误了:\n" + e);
+      }
+    };
+    function onerror(e) {  //错误弹框
+      alert(e);
+    };
+    function onmarked(type, result) {  //这个是扫描二维码的回调函数，type是扫描二维码回调的类型
+      var text = '';
+      switch (type) { //QR,EAN13,EAN8都是二维码的一种编码格式,result是返回的结果
+        case plus.barcode.QR:
+          text = 'QR: ';
+          break;
+        case plus.barcode.EAN13:
+          text = 'EAN13: ';
+          break;
+        case plus.barcode.EAN8:
+          text = 'EAN8: ';
+          break;
+      }
+      alert(text + " : " + result);
+
+    };
+
+  </script> -->
+  <style>
+    .adverimg>div>a>img {
+      width: 49%;
+      float: left;
+      margin-right: 1px;
+      margin-bottom: 1px;
+    }
+    #scrollimg .bd li{
+      height:205px;
+    }
+    .productimg{
+      position:relative
+    }
+    .productlist ul li .productimg img{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%)
+    }
+
+    .entry-list {
+      padding-top: 10px;
+    }
+
+    .scrollimg .bd {
+      height: 110px;
+    }
+    .location span{
+      background: none !important;
+      color: #6d6d6d !important;
+    }
+   #city #allmap{
+      display: none !important
+    }
+    .index_search_mid input{
+      background: rgba(255,255,255,.7);
+    }
+  </style>
+
+</head>
+
+<body id="indexbox">
+  <div id="page" class="showpage">
+    <div>
+      <div class="indexWrap" id="topAnchor">
+        <div id="scrollimg" class="scrollimg" style="height:205px;">
+          <div class="bd" style="height:205px">
+            <ul>
+              <li>
+                <a href="{:url('Goods/goodsList?id=1024')}">
+                  <img src="__STATIC__/images/newimg/usr/banner01-1.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <!-- <li>
+                <a href="{:url('Goods/goodsDetailNew?id=140')}">
+                  <img _src="__STATIC__/images/newimg/usr/banner4.jpg" title="" width="100%" />
+                </a>
+              </li> -->
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=922')}">
+                  <img _src="__STATIC__/images/newimg/usr/banner9-01.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=1131')}">
+                  <img _src="__STATIC__/images/newimg/usr/shan.jpg" title="" width="100%"  />
+                </a>
+              </li>
+              <!-- <li>
+                <a href="javascript:void(0)">
+                  <img src="__STATIC__/images/newimg/usr/banner3.jpg" title="" width="100%" />
+                </a>
+              </li> -->
+              <li>
+                <a href="{:url('Goods/goodsList?id=1039')}">
+                  <img _src="__STATIC__/images/newimg/usr/banner05-01.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=938')}">
+                  <img _src="__STATIC__/images/newimg/usr/banner8-01.jpg" title="" width="100%" />
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="hd">
+            <ul></ul>
+          </div>
+        </div>
+        
+        <div class="searchbbox">
+          <a href="{:U('User/choosecity')}">
+            <div class="location" id="location">
+              <span id="city">{$name}</span>
+            </div>
+          </a>
+          
+          <!-- <script type="text/javascript"
+            src="https://webapi.amap.com/maps?v=1.4.14&key=4a66ce96cf75144d7cd27fbfa42429b6&plugin=AMap.CitySearch"></script> -->
+          <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=ryUeCXuyh8oebZGclHCVYW4ffHHf2n7o"></script>
+          <script type="text/javascript">
+
+            $(function () {
+              if ($('#city').html() == "") {
+                // var citysearch = new AMap.CitySearch();
+                // //自动获取用户IP，返回当前城市
+                // citysearch.getLocalCity(function (status, result) {
+                //   console.log(result);
+                //   if (status === 'complete' && result.info === 'OK') {
+                //     if (result && result.city && result.bounds) {
+                //       var cityinfo = result.city;
+                //       var citybounds = result.bounds;
+                //       $('#city').html(cityinfo);
+                //       //地图显示当前城市
+                //     }
+                //   } else {
+                //     $('#city').html(result.info);
+                //   }
+                // });
+                // 百度地图API功能
+                // var map = new BMap.Map("city");
+                // function myFun(result) {
+                //   var cityName = result.name;
+                //   map.setCenter(cityName);
+                //   $('#city').html(cityName);
+                // }
+                // var myCity = new BMap.LocalCity();
+                // myCity.get(myFun);
+
+                var geolocation = new BMap.Geolocation();
+                geolocation.getCurrentPosition(function (r) {
+                  if (this.getStatus() == window.BMAP_STATUS_SUCCESS) {
+                    //坐标
+                    var cityName=r.address.city
+                    $('#city').html(cityName);
+                    }
+                  })
+              };
+            });
+          </script>
+          <div id="fake-search " class="index_search ">
+            <div class="index_search_mid">
+                <form action="javascript:return true"> 
+              <span><img src="__STATIC__/images/newimg/search.png"></span>
+              <input type="search" id="search_text" class="search_text" placeholder="搜索商品" />
+              </form>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      TouchSlide({
+        slideCell: "#scrollimg",
+        titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".bd ul",
+        effect: "leftLoop",
+        switchLoad:"_src",
+        autoPage: true,//自动分页
+        autoPlay: true //自动播放
+      });
+    </script>
+
+    <!-- 分类 -->
+    <div class="entry-list clearfix">
+      <nav>
+        <ul>
+          <li>
+            <a href="{:U('Goods/categoryList')}">
+              <img alt="全部分类" src="__STATIC__/images/newimg/allfind.png" />
+              <span>全部分类</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:U('store/storelist')}">
+              <img alt="店铺街" src="__STATIC__/images/newimg/store.png">
+              <span>店铺街</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:U('Index/brand')}">
+              <img alt="品牌街" src="__STATIC__/images/newimg/brand.png">
+              <span>品牌街</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:U('index/oneBuy')}">
+              <img alt="一元购" src="__STATIC__/images/newimg/one.png">
+              <span>合约消费</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:U('partner/partner_all')}">
+              <img alt="合伙人" src="__STATIC__/images/newimg/partner.png" />
+              <span>合伙人</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:url('Goods/goodsList?id=1038')}">
+              <img alt="我的订单" src="__STATIC__/images/newimg/order.png">
+              <span>VIP中心</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:url('Goods/goodsList?id=1043')}">
+              <img alt="B-VIP" src="__STATIC__/images/newimg/b-vip.png" />
+              <span>B-VIP</span>
+            </a>
+          </li>
+          <li>
+            <a href="{:U('User/indexnew')}">
+              <img alt="个人中心" src="__STATIC__/images/newimg/personCenter.png" />
+              <span>一元销售</span>
+            </a>
+          </li>
+          <li class="taobao">
+            <a href="http://stork36.cn/index.html" >
+              <!-- https://blj.ubaoliao.com/#/ -->
+              <img alt="淘宝" src="__STATIC__/images/newimg/jdb.png" />
+              <span>京多宝</span>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img alt="社区" src="__STATIC__/images/newimg/associate.png" />
+              <span>社区</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div> 
+
+    <div class="mainbox">
+      <!-- 头条 -->
+      <div class="headline">
+        <a href="{:U('Index/notice')}">
+          <span class="headlineTitle">公告</span>
+          <span class="headlinemain">爆品推荐 欢迎大家立即抢购</span>
+          <span class="moreimg fr"><img src="__STATIC__/images/newimg/more.png" alt=""></span>
+        </a>
+      </div>
+
+      <!-- 优惠 -->
+      <div class="discounts">
+        <div class="discoutlist  clearfix">
+          <ul>
+            <li class="margin-r10"><img src="__STATIC__/images/newimg/dis01.jpg" alt=""></li>
+
+            <li>
+              <a href="{:url('Goods/goodsList?id=1029')}"><img src="__STATIC__/images/newimg/dis002-2.jpg" alt=""></a>
+            </li>
+          </ul>
+        </div>
+        <div class="discoutlist  clearfix">
+          <ul>
+            <li class="margin-r10"><a href="{:url('Goods/goodsList?id=615')}"><img
+                  src="__STATIC__/images/newimg/dis03-01.jpg" alt=""></a></li>
+            <li><a href="{:url('Goods/goodsList?id=993')}"><img src="__STATIC__/images/newimg/dis04-01.jpg" alt=""></a>
+            </li>
+          </ul>
+        </div>
+        <div class="discoutlist clearfix">
+          <ul>
+            <li class="margin-r10"><a href="{:url('Goods/goodsList?id=994')}"><img
+                  src="__STATIC__/images/newimg/dis05-02.jpg" alt=""></a></li>
+            <li><a href="{:url('Goods/goodsList?id=995')}"><img src="__STATIC__/images/newimg/dis06-01.jpg" alt=""></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 海报 -->
+      <div id="scrollimgPost" class="scrollimg adverlsits">
+        <div class="bd">
+          <ul>
+            <adv pid ="5" limit="5" item="v">
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=600')}" target="_blank">
+                  <img src="__STATIC__/images/newimg/index/01.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=152')}" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/2.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=184')}" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/3.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsList?id=1044')}" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/xiyinzhou.png" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=189')}" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/05.jpg" title="" width="100%" />
+                </a>
+              </li>
+            </adv>                        
+          </ul>
+        </div>
+        <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+
+
+      <!-- 每日必逛 -->
+      <div class="shopAround">
+        <div class="indexTitle flex jus-start align-c">
+          <img src="__STATIC__/images/newimg/goods/shopAround.png" alt="" width="15" height="15">
+          <p class="font-17 maincolor">每日必逛</p>
+        </div>
+        <div class="adverimg">
+          <div class="clearfix">
+            <a href="{:url('Goods/goodsList?id=979')}">
+            <img src="__STATIC__/images/newimg/index/advertise01-01.jpg" alt=""></a>
+            <a href="{:url('Goods/goodsList?id=980')}">
+            <img src="__STATIC__/images/newimg/index/advertise02-01.jpg" alt=""></a>
+          </div>
+          <div class="clearfix">
+            <a href="{:url('Goods/goodsList?id=981')}">
+            <img src="__STATIC__/images/newimg/index/advertise03-01.jpg" alt=""></a>
+            <a href="{:url('index/oneBuy')}">
+            <img src="__STATIC__/images/newimg/index/advertise04-01.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 海报 -->
+      <div id="scrollimgPost1" class="scrollimg adverlsits">
+        <div class="bd">
+          <ul>
+            <adv pid="5" limit="5" item="v">
+              <li>
+                <a href="{:url('Goods/goodsDetailNew?id=133')}" target="_blank">
+                  <img src="__STATIC__/images/newimg/index/6.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/7.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/8.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/9.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/10.jpg" title="" width="100%" />
+                </a>
+              </li>
+            </adv>
+          </ul>
+        </div>
+        <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+
+
+      <!-- 酷玩潮流 -->
+      <div class="shopAround">
+        <div class="indexTitle flex jus-start align-c">
+          <img src="__STATIC__/images/newimg/index/coldplay.png" alt="" width="15" height="15">
+          <p class="font-17 maincolor">酷玩潮流</p>
+        </div>
+        <div class="adverimg">
+          <div class="clearfix">
+            <a href="{:url('Goods/goodsList?id=293')}">
+            <img src="__STATIC__/images/newimg/index/advertise05-01.jpg" alt=""></a>
+            <a href="{:url('Goods/goodsList?id=365')}">
+            <img src="__STATIC__/images/newimg/index/advertise06-01.jpg" alt=""></a>
+          </div>
+          <div class="clearfix">
+            <a href="{:url('Goods/goodsList?id=697')}">
+            <img src="__STATIC__/images/newimg/index/advertise07-01.jpg" alt=""></a>
+            <a href="{:url('Goods/goodsList?id=987')}">
+            <img src="__STATIC__/images/newimg/index/advertise08-01.jpg" alt=""></a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 海报 -->
+      <div id="scrollimgPost2" class="scrollimg adverlsits">
+        <div class="bd">
+          <ul>
+            <adv pid="5" limit="5" item="v">
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img src="__STATIC__/images/newimg/index/11.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/12.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/13.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/14.jpg" title="" width="100%" />
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)" target="_blank">
+                  <img _src="__STATIC__/images/newimg/index/15.jpg" title="" width="100%" />
+                </a>
+              </li>
+            </adv>
+          </ul>
+        </div>
+        <div class="hd">
+          <ul></ul>
+        </div>
+      </div>
+
+
+      <!-- 生活品质 -->
+      <div class="shopAround">
+        <div class="indexTitle flex jus-start align-c">
+          <img src="__STATIC__/images/newimg/goods/qualityLife.png" alt="" width="15" height="15">
+          <p class="font-17 maincolor">生活品质</p>
+        </div>
+        <div class="adverimg">
+          <div class="clearfix">
+              <a href="{:url('Goods/goodsList?id=96')}">
+            <img src="__STATIC__/images/newimg/index/advertise09-01.jpg" alt=""></a>
+            <a href="{:url('Goods/goodsList?id=142')}">
+            <img src="__STATIC__/images/newimg/index/advertise10-01.jpg" alt=""></a>
+          </div>
+          <div class="clearfix">
+            <a href="{:url('Goods/goodsList?id=856')}">
+            <img src="__STATIC__/images/newimg/index/advertise11-01.jpg" alt=""></a>
+            <a href="{:url('Goods/goodsList?id=588')}">
+            <img src="__STATIC__/images/newimg/index/advertise12-01.jpg" alt=""></a>
+          </div>
+          <div class="adverimglist">
+            <ul>
+              <li><a href="{:url('Goods/goodsList?id=865')}"><img src="__STATIC__/images/newimg/index/advertise13-01.jpg"
+                    alt=""></a></li>
+              <li><a href="{:url('Goods/goodsList?id=167')}"><img src="__STATIC__/images/newimg/index/advertise14-01.jpg"
+                    alt=""></a> </li>
+              <li><a href="{:url('Goods/goodsList?id=150')}"><img src="__STATIC__/images/newimg/index/advertise15-01.jpg"
+                    alt=""></a></li>
+              <!-- <li><img src="__STATIC__/images/newimg/index/advertise16.jpg" alt=""></li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 产品推荐 -->
+      <div class="productRec">
+        <div class="productTitle">
+          <p class="maincolor font-17">产品推荐<span>Product recommendation</span></p>
+        </div>
+        <div class="productlist">
+          <div>
+            <ul class="clearfix">
+              <volist name="goods_list" id="vo">
+                <li>
+                  <a href="{:U('Mobile/Goods/goodsDetailNew',array('id'=>$vo[goods_id]))}">
+                    <div class="productimg">
+                      <img data-original="{$vo.original_img|imgtransformation}" alt=""
+                        src="__STATIC__/images/newimg/loading.gif" class="lazy">
+                    </div>
+                    <div class="productDetail">
+                      <if condition="$vo.goods_remark eq ''">
+                          <p>
+                              <span>{$vo.goods_name}</span>
+                          </p>
+                      </if>
+                      <if condition="$vo.goods_remark neq ''">
+                          <p>【{$vo.goods_remark}】
+                              <span>{$vo.goods_name}</span>
+                          </p>
+                      </if>
+                    </div>
+                    <div class="productScale flex jus-between align-c" style="padding-right: 15px">
+                      <p class="maincolor">￥<i>{$vo.shop_price}</i></p>
+                      <span>库存:{$vo.store_count}</span>
+                    </div>
+                  </a>
+                </li>
+              </volist>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <a href="#topAnchor"  class="iconfont icon-fanhuidingbu returnTop"></a>
+    </div>
+
+    </div>
+    <script>
+        $('#search_text').bind('search', function () {
+          //coding
+         var value=$("#search_text").val();
+          if(value != ''){
+            window.location.href = "/mobile/Goods/goodsList?name="+value;
+          }
+
+      });
+
+    
+    </script>
+    <script type="text/javascript">
+      TouchSlide({
+        slideCell: "#scrollimgPost",
+        titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".bd ul",
+        switchLoad:"_src",
+        effect: "leftLoop",
+        autoPage: true,//自动分页
+        autoPlay: true //自动播放
+      });
+      TouchSlide({
+        slideCell: "#scrollimgPost1",
+        titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".bd ul",
+        switchLoad:"_src",
+        effect: "leftLoop",
+        autoPage: true,//自动分页
+        autoPlay: true //自动播放
+      });
+
+      TouchSlide({
+        slideCell: "#scrollimgPost2",
+        titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: ".bd ul",
+        switchLoad:"_src",
+        effect: "leftLoop",
+        autoPage: true,//自动分页
+        autoPlay: true //自动播放
+      });
+</script>
+<include file="public/footer_nav"/>
+
+    <script src="__PUBLIC__/js/jqueryUrlGet.js"></script>
+    <script src="__STATIC__/js/jquery.lazyload.js"></script>
+    <script>
+      
+     $(function(){
+        
+        $("img.lazy").lazyload({ threshold : 200 });
+        // $(".taobao").on("click",function(){
+        //   alert("升级中")
+        // })
+      })
+    </script>
+    <!--获取get参数插件-->
+    <script> set_first_leader(); //设置推荐人 </script>
+
+</body>
+</html>

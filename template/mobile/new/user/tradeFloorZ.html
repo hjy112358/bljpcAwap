@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="Generator" content="TPshop v1.1" />
+    <meta charset="UTF-8">
+    <!-- <title>钱包-交易记录-Z券</title> -->
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/index.css" />
+    <link rel="stylesheet" href="__STATIC__/css/topdetail.css">
+    <link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+    <script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/jquery.json.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/touchslider.dev.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/global.js"></script>
+    <script src="__PUBLIC__/js/mobile_common.js"></script>
+
+</head>
+
+<body class="tradez">
+    <div class="wrap tradewrap">
+        <!-- <div class="pubhead maincolorbg">
+            <a href="javascript:history.back(-1)">
+                <p>交易记录</p>
+            </a>
+        </div> -->
+        <!-- <div class="maincolorbg flex jus-between align-c tophead">
+            <a href="javascript:history.back(-1)" class="iconfont icon-fanhui2"></a>
+            <p class="font-18">交易记录</p>
+            <a href=""></a>
+        </div> -->
+        <!-- <div class="maincolorbg tophead " id="topAnchor" style="text-align: center;">
+            <p class="font-18" style="margin-left:0">交易记录</p>
+        </div> -->
+
+
+        <div class="setting">
+            <div class="flex jus-start align-c tradezSetting">
+                <div class="userimg">
+                    <img src="{$user_info['head_pic']}" alt="">
+                </div>
+                <div class="editbox">
+                    <span>{$user_info['nickname']}</span>
+                    <p>这个人很懒，什么也没留下</p>
+
+                </div>
+            </div>
+            <p class="recycle">*24点挂售券未售出，系统将自动收回</p>
+            <div class="transtype">
+                <div class="tickets clearfix">
+                    <ul>
+                        <li>
+                            <p>Z券</p>
+                            <span class="maincolor">{$zquan}</span>
+                        </li>
+                        <li>
+                            <p>余额</p>
+                            <span class="maincolor">{$yue}</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="transbtn">
+                    <a href="javascript:void(0)">买入</a>
+                    <a href="javascript:void(0)" class="saleout">卖出</a>
+                </div> -->
+
+            </div>
+
+            <div class="tradecode">
+                <ul>
+                    <li>
+                        <foreach name="arr_time1" key="key" item="val">
+                            <div class="tradecodeTitle flex align-c jus-between">
+                                <p>{$key}</p>
+                                <p>交易记录：<span class="maincolor">{$arr_count[$key]}条</span></p>
+                            </div>
+                            <div class="tradecodelist">
+                                <ul>
+                                    <foreach name="val" key="k" item="v">
+                                        <li class="flex align-c">
+                                                <img src="{$v.img}" alt="">
+                                                <div class="tradedetail flex  align-c jus-between">
+                                                    <p>{$v.ticket_change_type}</p>
+                                                    <span>{$v.ticket_change_number}个</span>
+                                                </div>
+                                        </li>
+                                    </foreach>
+
+                                </ul>
+                            </div>
+                        </foreach>
+                    </li>
+                
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="successBg">
+        <div class="succpup">
+            <div class="saleBg">
+                <p>卖出5张</p>
+            </div>
+            <a href="javascript:void(0)" class="sureBtn">
+                <img src="__STATIC__/images/newimg/usr/suebtn.png" alt="">
+            </a>
+            <a href="javascript:void(0)" class="closeBtn">
+                <img src="__STATIC__/images/newimg/usr/closetrade.png" alt="">
+            </a>
+        </div>
+
+    </div> -->
+</body>
+
+</html>

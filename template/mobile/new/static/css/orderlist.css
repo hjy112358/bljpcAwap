@@ -1,0 +1,401 @@
+body{
+    background:#f3f3f3
+}
+.orderlisthead{
+    height:44px;
+    line-height:44px;
+}
+.orderlisthead p:before{
+    content:"";
+    background:url("../images/newimg/order/backW.png") no-repeat;
+    float:left;
+    width:11px;
+    height:19px;
+    position: absolute;
+    left:10px;
+    top:12px;
+    background-size:100%
+}
+.orderlisthead p{
+    color:#fff;
+    font-size:18px;
+    text-align:center;
+}
+
+.tabBox .hd{ 
+    height:40px; 
+    line-height:40px; 
+    padding:0 10px; 
+    font-size:20px; 
+   
+    position:relative; 
+ }
+.tabBox .hd ul{ 
+    position:absolute; 
+    height:41px; 
+    top:0; 
+    width:97%;
+    overflow:hidden; 
+ }
+.tabBox .hd ul li{ 
+    float:left;
+    padding:0 10px; 
+    color:#666; 
+    font-size:14px;
+    width: 14%;
+    text-align: center;
+ }
+.tabBox .hd ul .on{
+    border-bottom:1px solid #ff4c4c
+}   
+
+.tabBox .bd>li{ 
+    height:33px; 
+    line-height:33px; 
+  }
+.tabBox .bd>li a{ 
+   
+}
+
+.productmsglist ul li{
+    margin-top:15px;
+    padding: 0px 10px 0 10px;
+    background:#fff;
+}
+.productmsg p{
+    font-size:13px;
+    color:#2c2c2c
+}
+.productmsg span{
+    font-size: 12px;
+    text-align: right;
+}
+.productmsg .store{
+    width:13px;
+    height:12px;
+    margin-right: 16px;
+}
+.productmsg p i{
+    color:#dcdcdc
+}
+.goodsimg {
+    width:64px;
+    height: 67px;
+    padding:5px;
+    border:1px solid #eee;
+}
+.goodsimg img{
+    max-width: 100%;
+}
+.goodsdetail{
+    max-width:200px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 40px;
+    line-height: 20px;
+}
+.goodproceAnum {
+    max-width:70px;
+    margin-top:-10px
+}
+.goodproceAnum span{
+    display:block;
+    
+}
+.total {
+    text-align: right;
+    margin-top:-10px
+}
+.goodsnum{
+    color:#8c8c8c
+}
+
+/* 购物车 */
+.shopNum a{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #c2c2c2;
+    color:#c2c2c2
+}
+.shopNum input{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border: none;
+    border-top:1px solid #c2c2c2;
+    border-bottom:1px solid #c2c2c2;
+    color:#c2c2c2
+}
+.checkimg {
+    width:15px;
+    height: 15px;
+    margin-right: 8px
+}
+
+.settle {
+    height: 48px;
+    line-height: 48px;
+    position: fixed;
+    bottom:0;
+    left:0;
+    border-top:1px solid #c2c2c2;
+    width:100%;
+    background:#fff;
+    color:#c2c2c2
+}
+
+.settle img{
+    width:15px;
+    height:15px;
+    margin-right:10px;
+    padding-left:10px
+}
+.accounts {
+    width:100px;
+    text-align:center;
+    color:#fff;
+    margin-left:40px
+}
+
+/* 退款售后 */
+.afterscalemsg{
+    flex-grow: 2;
+    margin-left:10px
+}
+
+.afterscalemsg p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height:40px;
+    line-height: 20px;
+}
+.afterscalemsg p.goodstype{
+    color: #b1b1b1;
+    max-width: 200px;
+    margin-top:5px
+}
+/* .afterscale{
+    background:#fff
+} */
+.afterscale .productmsglist ul li{
+    padding:0
+}
+.afterscale .productmsg>div{
+    padding:0 10px
+}
+.afterscale .productmsg>div.afterscaledetail{
+    padding: 15px 10px;
+    background: #f3f3f3;
+}
+.afterscale .goodsimg{
+    background:#fff
+}
+.refundtype p{
+    color:#2c2c2c
+}
+.refundtype img{
+    margin-right: 6px
+}
+.refundtype{
+    margin-left:10px;
+    border-bottom:1px solid #cbcbcb;
+  
+}
+.refundbtn a{
+    padding:0px 9px;
+    border:1px solid #ff4c4c;
+    height: 30px;
+    line-height: 30px
+}
+.afterscale .productmsg>div.refundbtn{
+    padding:15px 0;
+    padding-right: 10px
+}
+
+
+/* 退款详情 */
+.afterscale .productmsg>div.refundReason{
+    background:#fff;
+    padding:13px 10px
+}
+.productmsg .refundReason p{
+    color:#b1b1b1;
+    font-size:10px;
+    line-height: 22px
+}
+.refuntime {
+    color:#fff;
+    background:#f00;
+    padding: 17px 0 17px 29px;
+}
+.refuntime  p{
+    line-height: 20px
+}
+.line{
+    width:100%;
+    height: 5px;
+    background:#f2f2f2
+}
+.afterscaledetail .productmsg>div{
+    padding:4px 10px
+}
+
+
+/* 支付成功失败 */
+
+.paystatus{
+    background:#fff
+}
+.paystatusimg {
+    width:48px;
+    height: 48px;
+    margin:0 auto;
+    margin-top:40px;
+    margin-bottom:20px;
+   
+}
+.paystatusimg  img{
+    max-width: 100%
+}
+.paystatusmg{
+    text-align: center;
+}
+.paystatusmg p{
+    line-height: initial
+}
+.paydetail {
+    text-align: center;
+}
+.payname{
+    margin-top:60px;
+    margin-bottom:15px;
+}
+
+.completebtn{
+    display: block;
+    width:170px;
+    height: 32px;
+    line-height: 32px;
+    border:1px solid #ff4c4c;
+    border-radius: 10px;
+    text-align: center;
+    margin:0 auto;
+   margin-top:200px
+}
+
+/* 订单详情 */
+.btnlist{
+    text-align: right;
+    padding-bottom: 10px;
+}
+.btnlist .checkbtn{
+    padding:3px 8px;
+    border:1px solid #ff4c4c;
+    border-radius: 10px;
+}
+
+/* 评价 */
+.evalutetop{
+    background:#fff;
+    padding:15px 25px;
+}
+.evalutetop img{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+}
+.evalutetop p{
+    color:#6a6a6a;
+    margin-left:15px;
+}
+.evalutetop a{
+    padding:3px 8px;
+    border:1px solid #ff4c4c;
+    border-radius: 20px;
+}
+.evalutebox{
+ 
+    margin-top:20px
+}
+
+.evalutebox .hd ul li{
+    color:#6a6a6a;
+    width:50%;
+    float:left;
+    text-align: center
+}
+.evalutebox .hd ul li.on{
+    color:#ff4c4c;
+    border-bottom:1px solid #ff4c4c;
+}
+.evalutebox .hd{
+    border-bottom:1px solid #f0f0f0;
+    background:#fff;
+}
+
+.evalutedetail p{
+    line-height: initial
+}
+.evalutedetailimg img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.evalutedetail>ul>li{
+    padding:15px 25px;
+    background:#fff;
+    margin-bottom:5px;
+}
+.evalutemsg{
+    color:#6a6a6a;
+    margin:10px 0;
+}
+.evalutedetail>ul>li .evalutetext{
+    line-height: 20px;
+}
+.evaluteimglist ul li{
+    width:49%;
+    /* height: 150px; */
+    float:left;
+   
+}
+.evaluteimglist ul li img{
+    max-width: 100%
+}
+.evaluteimglist ul li:nth-child(odd){
+    margin-right: 2%;
+    margin-bottom:5px;
+}
+.evaluteimglist ul{
+    margin-top:15px;
+}
+
+.evalutegoods img{
+    width:80px;
+    height:75px;
+    margin-right: 10px
+}
+.evalutegoods p{
+    line-height: 25px;
+}
+.evalutegoodsmsg {
+    max-width: 230px;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+}
+.evalutegoods{
+    background:#f0f0f0
+}

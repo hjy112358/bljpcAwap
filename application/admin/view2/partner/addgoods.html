@@ -1,0 +1,292 @@
+<include file="public/layout" />
+<!--以下是在线编辑器 代码 -->
+<script type="text/javascript">
+    /*
+	 * 在线编辑器相 关配置 js 
+	 *  参考 地址 http://fex.baidu.com/ueditor/
+	 */
+    window.UEDITOR_Admin_URL = "__ROOT__/public/plugins/Ueditor/";
+    var URL_upload = "{$URL_upload}";
+    var URL_fileUp = "{$URL_fileUp}";
+    var URL_scrawlUp = "{$URL_scrawlUp}";
+    var URL_getRemoteImage = "{$URL_getRemoteImage}";
+    var URL_imageManager = "{$URL_imageManager}";
+    var URL_imageUp = "{$URL_imageUp}";
+    var URL_getMovie = "{$URL_getMovie}";
+    var URL_home = "{$URL_home}";
+</script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/public/plugins/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/public/plugins/Ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="__ROOT__/public/plugins/Ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript">
+
+    var editor;
+    $(function () {
+        //具体参数配置在  editor_config.js  中
+        var options = {
+            zIndex: 999,
+            initialFrameWidth: "95%", //初化宽度
+            initialFrameHeight: 400, //初化高度
+            focus: false, //初始化时，是否让编辑器获得焦点true或false
+            maximumWords: 99999, removeFormatAttributes: 'class,style,lang,width,height,align,hspace,valign'
+            , //允许的最大字符数 'fullscreen',
+            pasteplain: false, //是否默认为纯文本粘贴。false为不使用纯文本粘贴，true为使用纯文本粘贴
+            autoHeightEnabled: true,
+            toolbars: [
+                ['fullscreen', 'source', '|', 'undo', 'redo',
+                    '|', 'bold', 'italic', 'underline', 'fontborder',
+                    'strikethrough', 'superscript', 'subscript',
+                    'removeformat', 'formatmatch', 'autotypeset',
+                    'blockquote', 'pasteplain', '|', 'forecolor',
+                    'backcolor', 'insertorderedlist',
+                    'insertunorderedlist', 'selectall', 'cleardoc', '|',
+                    'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
+                    'customstyle', 'paragraph', 'fontfamily', 'fontsize',
+                    '|', 'directionalityltr', 'directionalityrtl',
+                    'indent', '|', 'justifyleft', 'justifycenter',
+                    'justifyright', 'justifyjustify', '|', 'touppercase',
+                    'tolowercase', '|', 'link', 'unlink', 'anchor', '|',
+                    'imagenone', 'imageleft', 'imageright', 'imagecenter',
+                    '|', 'insertimage', 'emotion', 'insertvideo',
+                    'attachment', 'map', 'gmap', 'insertframe',
+                    'insertcode', 'webapp', 'pagebreak', 'template',
+                    'background', '|', 'horizontal', 'date', 'time',
+                    'spechars', 'wordimage', '|',
+                    'inserttable', 'deletetable',
+                    'insertparagraphbeforetable', 'insertrow', 'deleterow',
+                    'insertcol', 'deletecol', 'mergecells', 'mergeright',
+                    'mergedown', 'splittocells', 'splittorows',
+                    'splittocols', '|', 'print', 'preview', 'searchreplace']
+            ]
+        };
+        editor = new UE.ui.Editor(options);
+        editor.render("goods_content");  //  指定 textarea 的  id 为 goods_content
+
+    }); 
+</script>
+<!--以上是在线编辑器 代码  end-->
+
+<body style="background-color: #FFF; overflow: auto;">
+    <div class="page">
+        <div class="fixed-bar">
+            <div class="item-title"><a class="back" href="javascript:history.back();" title="返回列表"><i
+                        class="fa fa-arrow-circle-o-left"></i></a>
+                <div class="subject">
+                    <h3>商品详情</h3>
+                    <h5>商品添加与管理</h5>
+                </div>
+            </div>
+        </div>
+        <!--表单数据-->
+        <form method="post" id="" enctype="multipart/form-data" >
+            <div class="ncap-form-default">
+                <dl class="row">
+                    <dt class="tit">
+                        <label><em>*</em>商品名称</label>
+                    </dt>
+                    <dd class="opt">
+                        <input type="text" placeholder="商品名称" class="input-txt" name="goods_name" value="{$goods_info['goods_name']}">
+                    </dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="tit">
+                        <label><em>*</em>商品价格</label>
+                    </dt>
+                    <dd class="opt">
+                        <input type="text" placeholder="商品价格" class="input-txt" name="shop_price" value="{$goods_info['shop_price']}">
+                    </dd>
+                </dl>
+                <dl class="row">
+                    <dt class="tit">
+                        <label><em>*</em>关键词</label>
+                    </dt>
+                    <dd class="opt">
+                        <input type="text" placeholder="关键词" class="input-txt" name="keywords" value="{$goods_info['keywords']}">
+                    </dd>
+                </dl>
+                <dl class="row">
+                    <dt class="tit">
+                        <label>赠送Z券</label>
+                    </dt>
+                    <dd class="opt">
+                        <input type="text" class="input-txt" name="zcoupon" value="{$goods_info['zcoupon']}">
+                    </dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="tit">
+                        <label>库存</label>
+                    </dt>
+                    <dd class="opt">
+                        <input type="text" class="input-txt" name="store_count" value="{$goods_info['store_count']}">
+                    </dd>
+                </dl>
+
+                <dl class="row">
+                    <dt class="tit">
+                        <label>商品封皮</label>
+                    </dt>
+                    <dd class="opt">
+                        <div class="input-file-show">
+                            <span class="show">
+                                <a id="img_a" target="_blank" class="nyroModal" rel="gal" href="{$goods_info['original_img']}">
+                                    <i id="img_i" class="fa fa-picture-o"
+                                        onmouseover="layer.tips('<img src={$goods_info.original_img}>',this,{tips: [1, '#fff']});"
+                                        onmouseout="layer.closeAll();"></i>
+                                </a>
+                            </span>
+                            <span class="type-file-box">
+                                <input type="text" id="original_img" name="original_img" value="{$goods_info['original_img']}"
+                                    class="type-file-text">
+                                <input type="file" name="file" id="file" value="选择上传..." class="type-file-button">
+                            </span>
+                        </div>
+                        <span class="err"></span>
+                        <p class="notic">请上传图片格式文件</p>
+                    </dd>
+                </dl>
+                <dl class="row">
+                    <dt class="tit">
+                        <label>商品描述</label>
+                    </dt>
+                    <dd class="opt">
+                        <textarea rows="4" cols="60" name="goods_remark" class="input-txt" id="goods_remark" >{$goods_info['goods_remark']}</textarea>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="tit">
+                        <label>商品详情</label>
+                    </dt>
+                    <dd class="opt">
+                        <textarea class="span12 ckeditor" id="goods_content" name="goods_content" title="">{$goods_info['goods_content']}</textarea>
+                    </dd>
+                </dl>
+                <div class="bot"><a href="JavaScript:void(0);" onClick="addgoods()" class="ncap-btn-big ncap-btn-green"
+                        id="submitBtn">确认提交</a></div>
+            </div>
+            <input type="hidden" name="goods_id" value="{$goods_info['goods_id']}">
+        </form>
+    </div>
+    <script>
+        var logoupload = document.getElementById("file");
+        logoupload.onchange = function () {
+            var items = $('#file')[0].files[0];
+            var filename = items.name;
+            var filesize = items.size;
+            var filetype = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+            if (filetype != "jpg" && filetype != "jpeg" && filetype != "png" && filetype != "gif") {
+                alert("请选择图片格式文件上传(jpg,png,jpeg,gif)！");
+                return false;
+            }
+            if (filesize > 4 * 1024 * 1024) {
+                alert('单文件最大4M');
+                return false;
+            }
+
+            var formData = new FormData();
+            formData.append('goods_img', $("#file")[0].files[0]);
+            $.ajax({
+                url: "{:U('Uploadify/uploadsgoodsimg')}",
+                type: 'POST',
+                data: formData,
+                dataType: 'JSON',
+                processData: false,
+                cache: false,
+                contentType: false,
+                success: function (ret) {
+                    if (ret == 0) {
+                        alert("图片上传失败！");
+                        return false;
+                    } else {
+                        $("#original_img").val(ret);
+                    }
+                }
+            })
+
+        }
+
+
+        function addgoods() {
+            var goods_id = $("input[name='goods_id']").val();
+            var shop_price = $("input[name='shop_price']").val();
+            var goods_name = $("input[name='goods_name']").val();
+            var keywords = $("input[name='keywords']").val();
+            var zcoupon = $("input[name='zcoupon']").val();
+            var store_count = $("input[name='store_count']").val();
+            var original_img = $("input[name='original_img']").val();
+            var goods_remark = $("#goods_remark").val();
+            var goods_content = $("#goods_content").val();
+
+            if(goods_name == ''){
+                layer.alert('请填写商品名称', {icon: 2});  
+                return false;
+            }
+
+            if(shop_price == ''){
+                layer.alert('请填写商品价格', {icon: 2});  
+                return false;
+            }
+
+            if(keywords == ''){
+                layer.alert('请填写关键词',{icon: 2});
+                return false;
+            }
+
+            if(zcoupon == ''){
+                layer.alert('请填写赠送Z券的数量',{icon: 2});
+                return false;
+
+            }
+
+            if(store_count == ''){
+                layer.alert('请填写库存',{icon: 2});
+                return false;
+            }   
+
+            if(original_img == ''){
+                layer.alert('请上传封皮',{icon: 2});
+                return false;
+            }
+
+            if(goods_remark == ''){
+                layer.alert('请填写商品描述',{icon: 2});
+                return false;
+            }
+
+            if(goods_content == ''){
+                layer.alert('请填写商品详情',{icon: 2});
+                return false;
+            }
+
+
+            $.ajax({
+                url: "{:url('partner/addgoods')}",
+                type: "POST",
+                data: { goods_id: goods_id, goods_name: goods_name, shop_price: shop_price, keywords: keywords, zcoupon: zcoupon, store_count: store_count, original_img: original_img, goods_remark: goods_remark, goods_content: goods_content },
+                success: function (data) {
+                    if(data['status'] == '1'){
+                        layer.alert(data['msg'],{icon: 1});
+                        window.location.href = "/admin/partner/goods_list";
+                    }else{
+                        layer.alert(data['msg'],{icon: 2});
+                        return false;
+                    }
+
+
+                }
+
+
+            })
+
+
+
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

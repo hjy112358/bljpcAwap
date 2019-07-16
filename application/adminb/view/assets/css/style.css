@@ -1,0 +1,43 @@
+.layui-row {
+    background:#fff
+}
+.searchbtn{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #177ce3;
+    background-repeat: repeat-y;
+    background-image: -moz-linear-gradient(left,#29adeb,#177ce3);
+    background-image: -webkit-linear-gradient(left,#29adeb,#177ce3);
+    background-image: -o-linear-gradient(left,#29adeb,#177ce3);
+    background-image: linear-gradient(left,#29adeb,#177ce3);
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 31px;
+}
+.searchbtn:hover{
+    color:#fff
+}
+.layui-tab{
+    margin:0
+}
+.layui-upload-list{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.layui-upload-list img{
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   
+    transform: translate(-50%,-50%);
+}
+.layui-upload{
+    margin-left: 30px;
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="Generator" content="TPshop1.2" />
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<!-- <title>安全中心-{$tpshop_config['shop_info_store_title']}</title> -->
+	<title></title>
+	<meta http-equiv="keywords" content="{$tpshop_config['shop_info_store_keyword']}" />
+	<meta name="description" content="{$tpshop_config['shop_info_store_desc']}" />
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+	<link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/login.css" />
+	<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/common.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/global.js"></script>
+	<style>
+		.nextStep input {
+			color: #fff;
+			display: block;
+			width: 100%;
+			height: 40px;
+			background: #ff4c4c;
+			border-radius: 30px;
+			border: 0
+		}
+	</style>
+</head>
+
+<body>
+	<!-- <header id="header" class='header'>
+    <div class="h-left"><a href="javascript:history.back(-1)"></a></div>
+	<div class="h-mid">找回密码</div>
+</header> -->
+	<div id="tbh5v0">
+		<div class="find">
+			<!-- <section class="innercontent">
+	<form action="{:U('User/forget_pwd')}" method="post" id="fpForm" name="fpForm" class="c-form login-form">
+		<div class="yonghu">
+			<input type="text" id="username" name="username" placeholder="请输入邮箱/手机号" value="" />
+		</div>  
+	    <div class="yanzheng" style=" margin-top:10px;">
+			<div class="codeTxt">
+				<input type="text" id="captcha" name="verify_code" placeholder="验证码" />
+			</div>
+			<div class="codePhoto">
+				<img class="check-code-img" src="/index.php?m=Mobile&c=User&a=verify&type=forget" alt="验证码" id="verify_code_img" onClick="verify()" height="35"/>
+			</div>
+		</div>                                    
+		<div class="submit-btn">
+			<input type="button" id="btn_submit" class="btn_big1" value="下一步" />
+		</div>
+	</form>
+   </section> -->
+			<div class="register">
+			
+				<!-- <div class="headbox">
+					<div class=" flex jus-between align-c tophead regbg">
+						<a href="javascript:history.back(-1)" class="iconfont icon-fanhui2"></a>
+						<p class="font-18">忘记密码</p>
+						<a href="javascript:void(0)" ></a>
+					</div>
+				</div> -->
+<!-- 
+				<div class="maincolorbg tophead " id="topAnchor" style="text-align: center;">
+					<p class="font-18" style="margin-left:0">忘记密码</p>
+				</div> -->
+
+
+				<div class="registerinput">
+					<form action="{:U('User/forget_pwd')}" method="post" id="fpForm" name="fpForm"
+						class="c-form login-form">
+						<div class="formbox">
+							<input type="text" id="username" name="username" placeholder="输入手机号码">
+						</div>
+						<div class="flex jus-between formbox">
+							<input type="text" id="mobile_code" name="mobile_code" placeholder="验证码">
+							<span class="sendCode font-12" id="zphone" onClick="sendcode(this)">发送验证码</span>
+						</div>
+						<div class="lastInput formbox">
+							<input type="password" id="password" name="password" placeholder="设置密码">
+						</div>
+
+						<div class="nextStep" style="margin-top:120px;">
+							<input type="button" id="btn_submit" style="font-size: 16px;" value="确认" />
+						</div>
+					</form>
+				</div>
+			</div>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$("#btn_submit").click(function () {
+						var username = $('#username').val();
+						if (username == '') {
+							layer.open({ content: '手机号不能为空', time: 2 });
+							return false;
+						}
+						if ($('#mobile_code').val() == '') {
+							layer.open({ content: '验证码不能为空', time: 2 });
+							return false;
+						}
+						if (!checkMobile(username)) {
+							layer.open({ content: '手机号格式不匹配!', time: 2 });
+							return false;
+						}
+						$("#fpForm").submit();
+					});
+				});
+
+
+				function sendcode(o) {
+					$.ajax({
+						url: '/index.php?m=Home&c=Api&a=send_validate_code&t=' + Math.random(),
+						type: 'post',
+						dataType: 'json',
+						data: { type: $(o).attr('rel'), send: $('#username').val(), scene: 1 },
+						success: function (res) {
+							if (res.status == 1) {
+								layer.open({ content: res.msg, time: 1 });
+								countdown(o);
+							} else {
+								layer.open({ content: res.msg, time: 2 });
+							}
+						}
+					})
+
+				}
+
+				var wait = 150;
+				function countdown(obj, msg) {
+					obj = $(obj);
+					if (wait == 0) {
+						obj.attr("onclick", "sendcode(this)");
+						obj.html(msg);
+						wait = 150;
+					} else {
+						if (msg == undefined || msg == null) {
+							msg = obj.html();
+						}
+						//obj.attr("disabled", "disabled");
+						obj.removeAttr("onclick");
+						obj.html(wait + "秒后重新获取");
+						wait--;
+						setTimeout(function () {
+							countdown(obj, msg)
+						}, 1000)
+					}
+				}
+
+
+
+
+
+				//验证码切换
+
+				function verify() {
+					$('#verify_code_img').attr('src', '/index.php?m=Mobile&c=User&a=verify&type=forget&r=' + Math.random());
+				}
+			</script>
+			<include file="public/footer" />
+		</div>
+	</div>
+	<include file="public/footer_nav" />
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body p{
+    line-height: initial
+}
+.tophead .icon-fanhui2{
+    color:#000
+}
+.tophead,.payUser{
+    background:#f2f2f2
+}
+.userhead{
+    width:38px;
+    height: 38px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin:0 auto;
+}
+.userhead img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+.payUser p{
+    text-align: center;
+    font-size: 12px;
+    color:#333333;
+    margin-top:10px;
+    padding-bottom:15px;
+}
+.payDetail{
+    padding:0 30px;
+}
+.payDetail>p{
+    font-size:12px;
+    color:#333;
+    padding:30px 0
+}
+.payPrice{
+    line-height: 30px;
+    height:30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+.payPrice i{
+    font-size: 30px;
+}
+.payPrice input{
+    line-height: 30px;
+    height:30px;
+    width:100%;
+    border:0;
+    margin-top:3px;
+    font-size: 30px;
+    
+}
+.payType p{
+    font-size: 12px;
+    margin-top:13px;
+    margin-bottom:15px;
+}
+.payimg p{
+    margin-left: 15px;
+}
+.sendMsg {
+    width:170px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    margin:0 auto;
+    color:#fff !important;
+    background:#ff4c4c;
+    font-size: 17px !important;
+    display: block;
+    margin-top:50px;
+    border-radius: 10px
+}   

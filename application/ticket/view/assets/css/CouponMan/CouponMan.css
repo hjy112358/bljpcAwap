@@ -1,0 +1,260 @@
+.searchlist>div input{
+    height: 36px;
+    line-height: 36px;
+    background:#fd9090;
+    border:none;
+    border-radius: 20px;
+    text-indent: 15px;
+    color:#fff;
+    padding-right: 35px;
+    width:150px
+}
+.searchlist>div{
+    position: relative;
+    display: inline-block;
+    margin-right:30px;
+    width:185px
+}
+.searchbox,.conponlist {
+    background:#fff;
+    border-radius: 15px;
+    padding:30px;
+    margin-bottom:33px;
+    position: relative;
+}
+.searchbox p{
+    color:#333;
+    margin-bottom:25px
+}
+.searchlist>div i{
+    position:absolute;
+    top:3px;
+    right:5px
+}
+.searchlist .detailadres{
+    width:250px;
+}
+.searchlist .detailadres input{
+    width:215px
+}
+#leftTabBox>p{
+    color:#333;
+    font-size: 22px;
+    
+}
+.layui-tab  .tabtitle {
+    background:#fed5d5;
+    border-radius: 20px;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+    width: 690px;
+    border-bottom: none;
+    height: 36px;
+    left:auto;
+}
+.layui-tab-title .layui-this:after{
+    height:36px;
+    border-width:0
+}
+
+.layui-tab  .tabtitle  li{
+    float:left;
+    line-height: 36px;
+    height:36px;
+    width:80px;
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.layui-tab .tabtitle  li.layui-this{
+    border-radius: 20px;
+    color:#fff;
+    background:#ff4c4c;
+}
+.bd{
+    width:100%;
+    margin-top:10px;
+}
+#leftTabBox .hd {
+    width: 560px;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+}
+.conponlist p{
+    font-size: 18px;
+    margin-top: -8px;
+}
+.layui-border-box{
+    width:99%
+}
+.layui-table-body{
+    overflow: hidden;
+}
+.layui-table thead tr{
+    background:#ff4c4c;
+    color:#fff;
+}
+.layui-table-main .layui-table-cell{
+    color:#333
+}
+.modulelist .hd ul li{
+    width:180px;
+    height: 50px;
+    line-height: 50px;
+    background:#fff;
+    border-radius: 30px;
+    margin-right:40px;
+    text-align: center;
+    font-size:18px;
+    color:#666666;
+    float:left;
+    margin-right: 40px;
+    margin-bottom:20px;
+    cursor: pointer;
+}
+.modulelist .hd ul li.on{
+    color:#ff4c4c
+}
+.searchbox {
+    margin-top:30px
+}
+.modulelist img{
+    margin-top:-22px;
+    max-width: 100%
+}
+.addmodule{
+    background:#fff;
+    border-radius: 20px;
+    padding:40px;
+    width:352px;
+}
+.addmodule input{
+    width:350px;
+    display: block;
+    line-height: 40px;
+    height:40px;
+    border:1px solid #d3d6dd;
+    margin-bottom: 15px;
+    text-indent: 10px;
+}
+.addmodule p{
+    margin-bottom: 16px;
+    font-size: 26px;
+    text-align: center;
+}
+.addmodule a{
+    width: 47%;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    height:40px;
+}
+.addmodule a.cancel{
+    border:1px solid #ff4c4c;
+    color:#ff4c4c;
+    box-sizing: border-box;
+    margin-right:4%
+}
+.addmodule a.sure{
+    background:#ff4c4c;
+    color:#fff
+}
+.addmodule {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%)
+}
+.addmoduleWrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index:9999
+}
+.bd ul li p{
+    color:#4d5b7e;
+    font-size:18px
+}
+#container div{
+    display:block
+}
+.echartsbox{
+    background: #fff;
+    border-radius: 20px;
+    width: 450px;
+    margin: 0 auto;
+    position: relative;
+}
+.chartsnum{
+    height: 40px;
+    line-height: 30px;
+    position: absolute;
+    left: 29px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* text-align: center; */
+}
+.echartsbox img{
+    position: absolute;
+    top: 36px;
+    right: 20px;
+}
+
+.searchwrap{
+    position: relative;
+}
+/* .searchwrap i{
+    position: absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+    font-size: 20px;
+    color:#ccc
+} */
+/* .searchwrap input{
+    width:200px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 15px;
+    border:1px solid #ccc;
+    padding-left:35px;
+} */
+.searchCris{
+    margin-top:30px
+}
+.searchCris .layui-form-label{
+    width:60px;
+}
+.searchbtn{
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    background: #ff4c4c;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 31px;
+}
+a:hover{
+    color:#fff
+}
+
+/* 券充值 */
+.rechargebtn{
+    background: #ff4c4c;
+    color: #fff;
+    display: block;
+    width: 100px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 11px;
+    margin-left: 20px;
+    margin-top: 30px;
+}

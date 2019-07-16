@@ -1,0 +1,3 @@
+<?php
+//000031104000a:1:{i:0;a:12:{s:4:"code";s:2:"qq";s:4:"name";s:8:"QQ登陆";s:7:"version";s:3:"1.0";s:6:"author";s:9:"彭老师";s:6:"config";s:216:"a:2:{i:0;a:4:{s:4:"name";s:6:"app_id";s:5:"label";s:6:"app_id";s:4:"type";s:4:"text";s:5:"value";s:0:"";}i:1;a:4:{s:4:"name";s:10:"app_secret";s:5:"label";s:10:"app_secret";s:4:"type";s:4:"text";s:5:"value";s:0:"";}}";s:12:"config_value";N;s:4:"desc";s:15:"QQ登陆插件 ";s:6:"status";i:1;s:4:"type";s:5:"login";s:4:"icon";s:8:"logo.jpg";s:9:"bank_code";s:2:"N;";s:5:"scene";N;}}
+?>

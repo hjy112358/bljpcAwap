@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/jquery.json.js"></script>
+    <!-- <title>后台充值端口</title> -->
+    <title></title>
+    <style>
+        input,select{
+            width: 500px;
+            height: 50px;
+            font-size: 40px;
+        }
+        button{
+            width: 500px;
+            height: 100px;
+            font-size: 40px;
+            line-height: 50px;
+        }
+        #title{
+            font-size: 70px;
+        }
+        #nickname{
+            line-height: 10px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<center>
+        <p id="title">后台充值</p>
+    <div>
+        <input type="number" id="mobile" placeholder="手机号"><br><br>
+        <p id="nickname"></p><br><br>
+        <select name="" id="ticket" >
+            <option value="0" selected="selected">Z券</option>
+            <option value="1">注册券</option>
+            <option value="2">消费券</option>
+            <option value="3">万用券</option>
+            <option value="5">余额券</option>
+        </select><br><br>
+        <input type="number" id="number" placeholder="数量"><br><br>
+        <input type="password" id="paypwd" placeholder="交易密码"><br><br>
+        <button id="submit">提交</button>
+    </div>
+</center>
+</body>
+<script>
+    $('#mobile').blur(function () {
+        var mobile = $('#mobile').val();
+        $.ajax({
+            url:"{:U('User/getusernickname')}",
+            data:{mobile:mobile},
+            type:"POST",
+            success:function(res){
+                if (res==0) {
+                    $('#nickname').text('没找到这个人名');
+                }else{
+                    $('#nickname').text(res);
+                }
+            }
+        })
+    })
+    $('#submit').click(function () {
+        var mobile = $('#mobile').val();
+        var ticket = $('#ticket option:selected').val();
+        var number = $('#number').val();
+        var paypwd = $('#paypwd').val();
+        $.ajax({
+            url:"{:U('User/userRecharge_do')}",
+            data:{mobile:mobile,ticket:ticket,number:number,paypwd:paypwd},
+            type:"POST",
+            success:function(res){
+                if (res==1) {
+                    alert('充值成功');
+                    $('#mobile').val('');
+                    $('#number').val('');
+                    $('#paypwd').val('');
+                    $('#nickname').html('');
+
+                }else{
+                    alert(res);
+                }
+            }
+        })
+
+    })
+</script>
+</html>

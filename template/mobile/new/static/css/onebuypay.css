@@ -1,0 +1,132 @@
+body{
+    background:url("../images/newimg/onebuy/onebuypaybg.png") no-repeat;
+    background-size:100%;
+}
+.col2f{
+    color:#2f2f30;
+    font-weight: normal;
+    margin-bottom:5px;
+}
+.col82{
+    color:#828282
+}
+
+.msgTtile{
+    text-align: center;
+    padding-top:100px;
+}
+.formbox label{
+    color:#4c4c4c
+}
+.msgform{
+    padding:0 25px;
+    margin-top:40px
+}
+.formbox{
+    line-height: 40px;
+    height:40px;
+    padding-bottom:35px;
+}
+.formbox label{
+    width:70px;
+}
+.formbox input{
+    height: 40px;
+    line-height: 40px;
+    border:0;
+    border-bottom:1px solid #999999;
+    width:70%;
+}
+.formbox1 label{
+    width:70px;
+    color:#4c4c4c;
+    line-height: 20px;
+    height: 20px;
+    float:left
+}
+
+.formbox1>div{
+    width:70%;
+    float:left
+}
+.forminline{
+    display: inline-block;
+    width: 45%;
+    border: 1px dashed #848585;
+    text-align: center;
+    max-width: 90px;
+}
+.imgbox img{
+    width:30px;
+    height:23px;
+    padding-top: 15px;
+}
+.col6c{
+    color:#6c6c6c
+}
+
+.imgbox p{
+    padding:13px 0
+}
+.upload{
+    position: relative;
+}
+.upimgbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index:-1;
+}
+.upimgbox img{
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#buynow {
+    display: block;
+    width:154px;
+    height: 37px;
+    line-height: 37px;
+    background:url("../images/newimg/onebuy/btn.png") no-repeat;
+    background-size:100%;
+    text-align: center;
+    color:#fff;
+    margin:0 auto;
+    margin-top:70px
+}
+.mark{
+    width:100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,.4);
+    text-align: center;
+}
+.mark .upimg{
+    /* width:375px;
+    height: 500px;*/
+    position: relative; 
+}
+.mark .upimg img{
+    max-width: 400px;
+    height: 560px;
+}
+.mark .upimg a{
+    display: block;
+    width:100%;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+}
+.closebtn{
+    width:33px;
+    height: 33px;
+
+}

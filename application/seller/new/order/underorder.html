@@ -1,0 +1,102 @@
+<include file="public/head"/>
+<div class="ncsc-layout wrapper">
+    <include file="public/left"/>
+  <div id="layoutRight" class="ncsc-layout-right">
+    <div class="ncsc-path"><i class="icon-desktop"></i>商家管理中心<i class="icon-angle-right"></i>商品<i class="icon-angle-right"></i>仓库中的商品</div>
+<div class="main-content" id="mainContent">
+      
+	
+    <form method="get" action="{:U('order/underorder')}" id="search-form2">
+        <table class="search-form">
+	  
+	  
+          <tr>
+          <td class="w378">
+                <input type="text" class="text w150" name="add_time_begin" id="add_time_begin" placeholder="开始时间" value=""/>
+          </td><td>
+                <input type="text" class="text w150" name="add_time_end" id="add_time_end" placeholder="结束时间" value=""/>
+             </td>
+            </tr>
+             <tr> 
+                    <th>支付状态</th>
+                    <td class="w160">
+                        <select name="pay_status" class="w150 w160">
+                          <option value="">支付状态</option>
+                          <option value="0">未支付</option>
+                           <option value="1">已支付</option>
+                      </select>
+                    </td>
+                   
+                    <th>支付方式</th>
+                    <td><select name="pay_code" class="w150 w160 di-in">
+                                <option value="">支付方式</option>
+                              <option value="alipayMobile">支付宝支付</option>
+                              <option value="appWeixinPay">微信支付</option>
+                              <option value="yue">余额</option>
+                           </select>
+                           <label class="submit-border"><input class="submit" value="搜索"  type="submit"></label>
+                    </td>
+                  </tr>
+	      
+	    </tr>
+	  </table>
+	</form>
+	
+	<table class="ncsc-default-table">
+	  <thead>
+	    <tr nc_type="table_header">
+	      <th class="w30">订单编号</th>
+	      <th class="w50">付款人</th>
+	      <th class="w50"> 总金额</th>
+	      <th class="w100">应付金额</th>
+          <th class="w100">支付状态</th>
+          <th class="w100">支付方式</th>
+	      <th class="w100">下单时间</th>
+	    </tr>
+	     
+	      </thead>
+	  	  <tbody>
+	  	  	  <foreach name="orderList" item="vo">
+		      <tr>
+		      <td class="trigger">{$vo.order_sn}</td>
+		     
+		     
+            <td class="trigger">{$vo.user_id}::{$vo.nickname}</td>
+		
+		      <td>&yen;{$vo.total_amount}</td>
+		      <td><span>&yen;{$vo.total_amount}</span></td>
+              <td><span><if condition="$vo.pay_status eq 1">已支付<else/>未支付</if></span></td>
+              <td><span>{$vo.pay_name}</span></td>
+              <td><span>{$vo.add_time|date='Y-m-d H:i',###}</span></td>
+		     
+		      </tr>
+		      </foreach>
+	      </tbody>
+	      <tfoot>
+		    <tr>
+		       <td colspan="20">{$page}</td>
+		    </tr>
+		  </tfoot>
+	  </table>
+	  
+   </div>
+  </div>
+</div>
+<include file="public/foot"/>
+<script>
+$(document).ready(function(){	
+	   
+       $('#add_time_begin').layDate(); 
+       $('#add_time_end').layDate();
+        
+       ajax_get_table('search-form2',1);
+       
+       $("#tab > li").each(function(){
+          $(this).click(function(){
+              tabSelect(this);
+          });
+      });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/public/assets/css/layui.css" type="text/css">
+    <link rel="stylesheet" href="/public/assets/css/mypublic.css" type="text/css">
+    <link rel="stylesheet" href="/public/assets/css/view.css" type="text/css" />
+    <link rel="stylesheet" href="/public/assets/css/setting/approve.css?time=<?php echo time()?>" type="text/css">
+    <script src="/public/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <title></title>
+    <style>
+        .loginOut {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="">
+    <div class="regHead ">
+        <p class="font-20 ">必量家<span class="font-16">卖家申请中心</span></p>
+        <div class="headmsg  clearfix">
+            <p class="fl">你好,{$user_info['nickname']}</p>
+            <p class="fl loginOut">退出</p>
+            <img src="{$user_info['head_pic']}" alt="">
+            <input type="hidden" id="islogin" value="{$user_info['islogin']}">
+        </div>
+    </div>
+    <div class="rowrap">
+        <div class=" rowbox">
+            <div class="applybox">
+                <h3>我要开店</h3>
+                <div class="step ">
+                    <ul class="clearfix">
+                        <li class=" ">
+                            <div class="stepWrap">
+                                <div class=" font-36">1</div>
+                                <div class="stepDetail">
+                                    <p class=" font-13">阅读开店须知</p>
+                                    <p class="font-13 stepmsg">确认自己符合规定</p>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="stepWrap">
+                                <div class=" font-36">2</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">入驻信息</p>
+                                    <p class="font-13 stepmsg">企业店铺</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="on">
+                            <div class="stepWrap">
+                                <div class=" font-36">3</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">公司信息</p>
+                                    <p class="font-13 stepmsg">填写公司信息</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="stepWrap">
+                                <div class=" font-36">4</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">店铺信息</p>
+                                    <p class="font-13 stepmsg">填写店铺信息</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="stepThree">
+                            <div class="stepWrap">
+                                <div class=" font-36">5</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">审核</p>
+                                    <p class="font-13 stepmsg">等待审核通过</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 开店认证 -->
+                <div class="authentication ">
+                    <form class="layui-form" id="form" action="" method="post">
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">公司信息</span>
+                            <!-- <span class="titleRight font-12">请输入真实的信息</span> -->
+                        </div>
+                        <div class="inputbox ">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">公司名称</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="company_name" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder=""onblur="checkCompany(this)" err_msg="0"  id="corpName">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">公司性质</label>
+                                    <div class="layui-input-inline">
+                                        <select name="company_type" id="company_type" lay-filter="company_type" >
+                                            <option value="">请选择</option>
+                                            <foreach name="company_type" item="v" key="k">
+                                            <option value="{$k}">{$v}</option>
+                                            </foreach>
+                                        </select>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">公司所在地</label>
+                                <div class="layui-input-inline ">
+                                    <select name="company_province" id="province" lay-filter="province" >
+                                        <option value="">请选择省</option>
+                                        <foreach name="province" item="vo">
+                                            <option value="{$vo.id}">{$vo.name}</option>
+                                        </foreach>
+                                    </select>
+                                    <span></span>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="company_city" id="city" lay-filter="city">
+                                        <option value="">选择城市</option>
+
+                                    </select>
+                                    <span></span>
+                                </div>
+                                <div class="layui-input-inline" style="margin-right:0">
+                                    <select name="company_district" id="twon" lay-filter="twon">
+                                        <option value="">选择区域</option>
+                                    </select>
+                                    <span></span>
+                                </div>
+
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">公司详细地址</label>
+                                <div class="layui-input-inline">
+                                    <textarea placeholder="输入你的信息" onblur="checkEmpty(this,this.value,'corpAddress','公司详细地址','');" name="company_address" class="layui-textarea" rows="5" id="corpAddress"></textarea>
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">公司网址</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="company_website" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="" id="lineAdress" onblur="checkEmpty(this,this.value,'lineAdress','公司网址','');" >
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">固定电话</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="company_telephone" lay-verify="required|phone" autocomplete="off"
+                                            class="layui-input" placeholder="" id="phone" onblur="checkEmpty(this,this.value,'phone','固定电话','phone');" >
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">邮政编码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="company_zipcode" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="" id="postcode" onblur="checkEmpty(this,this.value,'postcode','邮政编码','zip');" >
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">电子邮箱</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="company_email" lay-verify="email" autocomplete="off"
+                                            class="layui-input" placeholder="" id="email" onblur="checkEmpty(this,this.value,'email','电子邮箱','email');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">传真</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="company_fax" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder=""  id="fax" onblur="checkEmpty(this,this.value,'fax','传真','phone');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">联系人姓名</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="contacts_name" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="" id="contactName" onblur="checkEmpty(this,this.value,'contactName','联系人姓名','');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+
+                                    <label class="layui-form-label">联系人电话</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="contacts_mobile" lay-verify="required|phone" autocomplete="off"
+                                            class="layui-input" placeholder=""  id="contactPhone" onblur="checkEmpty(this,this.value,'contactPhone','联系人电话','mobile');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">联系人邮箱</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="contacts_email" lay-verify="email" autocomplete="off"
+                                            class="layui-input" placeholder=""  id="contactEmail" onblur="checkEmpty(this,this.value,'contactEmail','联系人邮箱','email');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">营业执照信息</span>
+                            <!-- <span class="titleRight font-12">请输入真实的信息</span> -->
+                        </div>
+                        <div class="inputbox ">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">统一社会信用代码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="business_licence_number" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="" id="businessNum" onblur="checkEmpty(this,this.value,'businessNum','统一社会信用代码','corpLicence');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">营业执照有效期</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="business_date" class="layui-input"  placeholder=" - "  id="businessTime" onblur="checkEmpty(this,this.value,'businessTime','营业执照有效期','');">
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">法定经营范围</label>
+                                <div class="layui-input-inline">
+                                    <textarea placeholder="" name="business_scope" class="layui-textarea" rows="5"  id="businessScope" onblur="checkEmpty(this,this.value,'businessScope','法定经营范围','');"></textarea>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authenticationbtn">
+                            <a href="{:url('reg/sellerRegTwo')}" style="margin-right: 155px"
+                                class="btnNO arthenbtn">上一步</a>
+                            <a href="javascript:void(0)" id="submit" class="nextStep">下一步</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/public/assets/layui.all.js" type="text/javascript"></script>
+    <script src="/public/assets/js/TouchSlide.1.1.js" type="text/javascript"></script>
+
+</body>
+<script>
+    layui.use(['layer', 'jquery', 'form'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form;
+
+        laydate = layui.laydate;
+        //日期范围
+        laydate.render({
+            elem: '#businessTime'
+            , range: true
+        });
+
+        //省
+        form.on('select(province)',function(data){
+            $("#province").next().css("border","1px solid #e6e6e6")
+            $("#province").parent().find("span").html("")
+            var parent_id = data.value;
+            if(!parent_id > 0){
+                return;
+            }
+            $('#twon').empty().css('display','none');
+            var url = '/index.php?m=Home&c=Api&a=getRegion&level=2&parent_id='+parent_id+"&selected="+0;
+            $.ajax({
+                type : "GET",
+                url  : url,
+                error: function(request) {
+                    showErrorMsg("服务器繁忙, 请联系管理员!");
+                    return;
+                },
+                success: function(v) {
+                    v = '<option value="0">选择城市</option>'+ v;
+                    $('#city').empty().html(v);
+                    form.render('select');//需要渲染一下
+                }
+            });
+
+        });
+        //市
+        form.on('select(city)', function(data){
+            $("#city").next().css("border","none")
+            $("#city").parent().find("span").html("")
+            var parent_id = data.value;
+            if(!parent_id > 0){
+                return;
+            }
+            var url = '/index.php?m=Home&c=Api&a=getRegion&level=3&parent_id='+parent_id+"&selected="+0;
+            $.ajax({
+                type : "GET",
+                url  : url,
+                error: function(request) {
+                    showErrorMsg("服务器繁忙, 请联系管理员!");
+                    return;
+                },
+                success: function(v) {
+                    v = '<option value="0">选择区域</option>'+ v;
+                    $('#twon').empty().html(v);
+                    form.render('select');//需要渲染一下
+                }
+            })
+        });
+        //区
+        form.on('select(twon)', function(data){
+            $("#twon").next().css("border","none")
+            $("#twon").parent().find("span").html("")
+        });
+        //公司性质
+        form.on('select(company_type)', function(data){
+            $("#company_type").next().css("border","none")
+            $("#company_type").parent().find("span").html("")
+        });
+        $('#submit').click(function () {
+            var islogin = $('#islogin').val();
+            if (islogin == 0) {
+                alert('请先登录');
+                window.location.href = 'loginNew.html';
+                return false;
+            }else{
+                if ($("#corpName").val() == '') {
+                    // $("#corpName").focus();
+                    $("#corpName").css("border","1px solid #ff4c4c")
+                    $("#corpName").next().html("公司名称不能为空")
+                    return;
+                }else{
+                    $("#corpName").css("border","1px solid #e6e6e6")
+                }
+
+                if ($("#company_type").val()=="") {
+                    $("#company_type").parent().find("span").html("请选择 公司性质")
+                    // $("#company_type").focus();
+                    $("#company_type").next().css("border","1px solid #ff4c4c")
+                    return;
+                }else{
+                    $("#company_type").next().css("border","none")
+                }
+                if ($("#province").val()=="") {
+                    $("#province").parent().find("span").html("请选择省份")
+                    // $("#province").focus();
+                    $("#province").next().css("border","1px solid #ff4c4c")
+                    return;
+                }else{
+                    $("#province").next().css("border","none")
+                }
+
+                if ($("#city").val()==""||$("#city").val()==0) {
+                    $("#city").parent().find("span").html("请选择城市")
+                    // $("#city").focus();
+                    $("#city").next().css("border","1px solid #ff4c4c")
+                    return;
+                }else{
+                    $("#city").next().css("border","none")
+                }
+               if ($("#twon").val()==""||$("#twon").val()==0) {
+                    $("#twon").parent().find("span").html("请选择区")
+                    // $("#twon").focus();
+                   $("#twon").next().css("border","1px solid #ff4c4c")
+                    return;
+                }else{
+                   $("#twon").next().css("border","none")
+               }
+                if (checkEmpty($("#corpAddress"),$("#corpAddress").val(),'corpAddress','公司详细地址','') != 1) {
+                    // $("#corpAddress").focus();
+                    return;
+                }
+                if (checkEmpty($("#lineAdress"),$("#lineAdress").val(),'lineAdress','公司网址','') != 1) {
+                    // $("#lineAdress").focus();
+                    return;
+                }
+                if (checkEmpty($("#phone"),$("#phone").val(),'phone','固定电话','phone') != 1) {
+                    // $("#phone").focus();
+                    return;
+                }
+                if (checkEmpty($("#postcode"),$("#postcode").val(),'postcode','邮政编码','zip') != 1) {
+                    // $("#postcode").focus();
+                    return;
+                }
+                if (checkEmpty($("#email"),$("#email").val(),'email','电子邮件','email') != 1) {
+                    // $("#email").focus();
+                    return;
+                }
+
+                if (checkEmpty($("#fax"),$("#fax").val(),'fax','传真','phone') != 1) {
+                    // $("#fax").focus();
+                    return;
+                }
+
+                if (checkEmpty($("#contactName"),$("#contactName").val(),'contactName','联系人姓名','') != 1) {
+                    // $("#contactName").focus();
+                    return;
+                }
+                if (checkEmpty($("#contactPhone"),$("#contactPhone").val(),'contactPhone','联系人电话','mobile') != 1) {
+                    // $("#contactPhone").focus();
+                    return;
+                }
+                if (checkEmpty($("#contactEmail"),$("#contactEmail").val(),'contactEmail','联系人邮箱','email') != 1) {
+                    // $("#contactEmail").focus();
+                    return;
+                }
+                if (checkEmpty($("#businessNum"),$("#businessNum").val(),'businessNum','统一社会信用代码','corpLicence') != 1) {
+                    // $("#businessNum").focus();
+                    return;
+                }
+                if (checkEmpty($("#businessTime"),$("#businessTime").val(),'businessTime','营业执照有效期','') != 1) {
+                    // $("#businessTime").focus();
+                    return;
+                }
+                if (checkEmpty($("#businessScope"),$("#businessScope").val(),'businessScope','法定经营范围','') != 1) {
+                    // $("#businessScope").focus();
+                    return;
+                }
+                $('#form').submit();
+            }
+
+        })
+    });
+
+    var ret = 0;
+    function checkEmpty(_this,value, id, msg, type) {
+        console.log(_this)
+        var _email = /^([a-zA-Z0-9]+[_|\_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+        var _phone= /^((\+?[0-9]{2,4}\-[0-9]{3,4}\-)|([0-9]{3,4}\-))?([0-9]{7,8})(\-[0-9]+)?$/;
+        var _zip= /^[0-9][0-9]{5}$/;
+        var _mobile = /^1(3|5|6|7|8|9)\d{9}$/;
+        var _positiveInteger = /^[0-9]*[1-9][0-9]*$/;
+        var _money = /^[1-9]{1}\d*(\.\d{1,2})?$/;
+        var _money1 = /^(?!0)\d{1,6}$|^(?!0)\d{1,6}[.]\d{1,6}$|^0[.]\d{1,6}$/;
+        if(value == "" ||  ($.trim(value)).length == 0){
+            $(_this).next().html( "请填写" + msg);
+            $(_this).css("border","1px solid #ff4c4c")
+        }  else {
+            if ((type == "email" && !(_email.test(value))) || (type == "phone" && !(_phone.test(value))) || (type == "mobile" && !(_mobile.test(value))) || (type == "zip" && !(_zip.test(value))) || (type == "positiveInteger" && !(_positiveInteger.test(value))) || (type == "money" && !(_money.test(value)))  || (type == "money1" && (!(value > 0) || !(_money1.test(value))))) {
+
+                if (type == "positiveInteger") {
+
+                    msg = msg + "(正整数)";
+                } else if (type == "money") {
+                    msg = msg + "(金额)";
+                } else if (type == "money1") {
+                    msg = msg + "(6位整数6位小数的金额)";
+                }
+
+                $(_this).next().html( "格式错误，请正确填写" + msg);
+                $(_this).css("border","1px solid #ff4c4c")
+
+            } else {
+                $(_this).next().html("");
+                $(_this).css("border","1px solid #e6e6e6")
+                ret = 1;
+            }
+        }
+        return ret;
+    }
+    function checkCompany(obj){
+        if($(obj).val()==''){
+            $(obj).next().html("不能为空")
+            $(obj).css("border","1px solid #ff4c4c")
+        }else{
+            $(obj).next().html("")
+            $(obj).css("border","1px solid #e6e6e6")
+        }
+        var url = "{:U('Reg/check_company')}";
+        $.ajax({
+            type : "POST",
+            url  : url,
+            data :{'company_name':$(obj).val()},
+            error: function(request) {
+                showErrorMsg("服务器繁忙, 请联系管理员!");
+                return false;
+            },
+            success: function(res) {
+                if(res == 'success'){
+                    $(obj).attr('err_msg',0);
+                }else{
+                    $(obj).attr('err_msg',1);
+                }
+            }
+        });
+
+    }
+
+
+    $(function () {
+        $.ajax({
+            url: "{:U('reg/getloginstatus')}",
+            type: "POST",
+            success: function (res) {
+                if (res == false) {
+                    $('.loginOut').html('');
+                }
+            }
+        })
+
+
+        $('.loginOut').click(function () {
+            $.ajax({
+                url: "{:U('reg/loginstatusout')}",
+                type: "POST",
+                success: function (res) {
+                    if (res == true) {
+                        alert('已退出账户');
+                        window.location.reload();
+                    }
+                }
+            })
+        })
+
+    })
+
+
+</script>
+
+</html>

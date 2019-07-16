@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="Generator" content="TPshop v1.1" />
+    <meta charset="UTF-8">
+    <!-- <title>我的店铺</title> -->
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/index.css" />
+    <link rel="stylesheet" href="__STATIC__/css/store.css">
+    <link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="__STATIC__/css/swiper.min.css">
+    <script type="text/javascript" src="__STATIC__/js/jquery.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/jquery.json.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/global.js"></script>
+    <script src="__PUBLIC__/js/mobile_common.js"></script>
+    <script src="__STATIC__/js/swiper.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+
+
+</head>
+
+<body>
+    <div class="wrap storelist">
+        <!-- <div class="pubheads maincolorbg flex jus-start align-c">
+            <a href="javascript:history.back(-1)"><img src="__STATIC__/images/newimg/order/backW.png" alt=""></a>
+            <div class="inputbox  pos-r">
+                <input type="text" placeholder="搜索店铺内宝贝" class="font-15">
+            </div>
+        </div> -->
+        <div class="maincolorbg flex jus-between align-c tophead">
+            <!-- <a href="{:url('index/index')}" class="iconfont icon-fanhui2"></a> -->
+            <div class="inputbox  pos-r">
+                <input type="text" placeholder="搜索店铺内宝贝" class="font-15">
+            </div>
+            <a href=""></a>
+        </div>
+
+
+        <div id="nav" class="swiper-container ">
+            <ul class="swiper-wrapper clearfix">
+                <if condition="$sc_id eq '' ">
+                <li class="swiper-slide active-nav">
+                <else/>
+                <li class="swiper-slide ">
+                </if>
+                    <a href="{:url('store/storelist')}">
+                    <p class="font-13">全部</p>
+                    </a>
+                </li>
+                <volist name="store_cate" id="vo">
+                <if condition="$vo.sc_id eq $sc_id">   
+                <li class="swiper-slide active-nav">
+                <else/>
+                <li class="swiper-slide">
+                </if>
+                    <a href="{:url('store/storelist?sc_id='.$vo.sc_id)}">
+                    <p class="font-13">{$vo.sc_name}</p>
+                    </a>
+                </li>   
+                </volist>
+               
+            </ul>
+        </div>
+        <div id="page" class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide slidepage">
+                    <div class="storesbox ">
+                        <ul>
+                            <volist name="storelist" id="vo">
+                            <li>
+                                <div class=" flex jus-between align-c">
+                                    <div class="flex jus-start">
+                                        <div class="storeimg">
+                                            <if condition="$vo.store_avatar neq '' ">
+                                            <img src="{$vo.store_avatar}" alt="">
+                                            <else/>
+                                            <img src="__STATIC__/images/newimg/usr/userimg.png" alt="">
+                                            </if>
+                                        </div>
+                                        <div>
+                                            <p class="font-14">{$vo.store_name}</p>
+                                            <p class="font-10 col8f">{$vo.tag_first} | {$vo.tag_second} | {$vo.tag_third}</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a class="font-12 goIn" href="{:U('store/store?store_id='.$vo.store_id)}">进店</a>
+                                    </div>
+                                </div>
+                                <div class="storegoodsimg flex jus-between align-c">
+                                    <volist name="vo.goods_hot" id="v" length="3">
+                                    <div>
+                                        <a href="{:url('goods/goodsDetailNew?id='.$v.goods_id)}">
+                                        <img src="{$v.original_img}" alt="">
+                                        </a>
+                                    </div>
+                                    </volist>
+                                    
+                                </div>
+                            </li>   
+                            </volist>
+
+
+                            
+                        </ul>
+
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden"  name="count" value="{$count}">
+    <input type="hidden"  name="sc_id" value="{$sc_id}">
+
+    <include file="public/foot_store" />
+</body>
+<script type="text/javascript">
+
+
+    var myNav = new Swiper('#nav', {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        on: {
+            tap: function () {
+                myPage.slideTo(myNav.clickedIndex)
+            }
+        }
+    })
+    var myPage = new Swiper('#page', {
+        on: {
+            slideChangeTransitionStart: function () {
+                updateNavPosition()
+            }
+        }
+    })
+    // function updateNavPosition() {
+    //     $('#nav .active-nav').removeClass('active-nav');
+    //     var activeNav = $('#nav .swiper-slide').eq(myPage.activeIndex).addClass('active-nav');
+    //     if (!activeNav.hasClass('swiper-slide-visible')) {
+    //         if (activeNav.index() > myNav.activeIndex) {
+    //             var thumbsPerNav = Math.floor(myNav.width / activeNav.width()) - 1
+    //             myNav.slideTo(activeNav.index() - thumbsPerNav)
+    //         }
+    //         else {
+    //             myNav.slideTo(activeNav.index())
+    //         }
+    //     }
+    // }
+
+   
+    
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,133 @@
+/* .walletTop {
+    background: url("../images/newimg/usr/walletbg.png") no-repeat;
+    background-size: 100% 220px;
+} */
+
+.walletTop .pubhead p:before {
+    left: 15px;
+}
+
+.walletTop .pubhead {
+    height: 70px;
+    line-height: 70px;
+}
+
+.walletTop .pubhead p:before {
+    top: 25px;
+}
+
+.walletclassify {
+    color: #fff;
+    padding-bottom:20px
+}
+
+.walletclassify p {
+    font-size: 12px;
+    margin-bottom:15px;
+}
+
+.walletclassify span {
+    font-size: 30px;
+}
+.walletclassify ul li{
+    width:50%;
+    text-align: center;
+    float:left;
+}
+.transaction ul li{
+    width:24.5%;
+    text-align: center;
+    float:left;
+    color:#282828;
+    font-size: 12px;
+    border-left:1px solid #e5e5e5;
+    padding: 6px 0;
+}
+.bor-l0 {
+    border-left:0;
+}
+.transaction ul li p{
+    margin-top:-5px;
+}
+.transaction ul{
+    /* box-shadow: -1px 4px 5px -2px rgb(235,234,234); */
+}
+.walletdatebox{
+    /* -webkit-box-shadow: rgb(235,234,234) 0px 0px 8px;
+    -moz-box-shadow: rgb(235,234,234) 0px 0px 18px;
+    box-shadow: rgb(235,234,234) 0px 0px 8px; */
+    margin-top: 5px;
+  
+    
+}
+.walletdate{
+    padding: 0 10px;
+}
+.walletdatebox  .percent,.todayDate{
+    padding:20px 15px;
+    background:url("../images/newimg/usr/walletmsgbg.png") no-repeat;
+    background-size: 100% 250px;
+    margin-bottom:10px;
+}
+.walletdatebox  .percent{
+    background:#fff;
+    border-radius: 15px;
+    margin-bottom:25px
+}
+.walletdatebox  .percent li{
+   width:33%;
+    float:left;
+    text-align:center;
+   
+}
+.walletdatebox  .percent li p{
+    font-size: 12px;
+}
+.walletdatebox  .percent li span{
+    line-height: 83px;
+    font-size:15px;
+    display:block;
+    background:url("../images/newimg/usr/percent.png") no-repeat;
+    background-size: 83px 83px;
+    background-position: center;
+}
+.todayDate h3{
+    color:#797979;
+    font-size:12px;
+    font-weight: normal
+}
+.summarize {
+    color:#fff;
+    font-size:12px;
+    padding-left: 20px;
+    margin-top:-10px;
+}
+.summarize:before{
+    content: "";
+    width:12px;
+    height:12px;
+    float:left;
+    background: url("../images/newimg/usr/warn.png") no-repeat;
+    background-size:100% 12px;
+    position: absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:3px
+}
+#box{
+    background:url("../images/newimg/usr/echartsBg.png") no-repeat;
+    background-size:100%
+}
+
+body{
+    background:url("../images/newimg/usr/walletbgs.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.transaction{
+    background: #fff;
+    margin: 0 10px;
+    margin-top: 146px;
+}
+#box canvas,#box2 canvas,#box3 canvas{
+    height: 170px !important;;
+}

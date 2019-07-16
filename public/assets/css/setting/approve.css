@@ -1,0 +1,245 @@
+.rowbox{
+    margin-top: 15px;
+    padding:40px 0 0 80px;
+    background: #fff;
+    border-radius: 5px;
+    width:1200px;
+    margin:0 auto
+}
+body{
+    background:#eeeff8;
+}
+.rowrap{
+    background:#fff;
+    margin-top:40px
+}
+.applybox h3{
+    font-size:24px;
+    color:#333;
+}
+.step{
+    margin-top:60px;
+}
+.step ul li{
+    background:url("../../images/stepw.png") no-repeat;
+    background-size: contain;
+    height:90px;
+    float: left;
+    width: 215px;
+    text-align:left;
+    position: relative;
+    color:#ff4c4c;
+    margin-right: 20px;
+}
+.step ul li .stepWrap div,.step ul li .stepWrap{
+    display: inline-block
+}
+.stepDetail{
+    text-align:left;
+    margin-left:10px
+}
+.step ul li .stepWrap{
+    position: absolute;
+    width: auto;
+    top: 3px;
+    width: 215px;
+    /* transform: translateY(-73%); */
+    left: 25px;
+    margin-top:-2px;
+}
+.step ul li.on{
+    background:url("../../images/stepN.png") no-repeat;
+    background-size: 100%;
+    color:#fff 
+}
+.step ul li.on .stepmsg{
+    color:#f8a3a3
+}
+.registryEntry>div{
+    width:40%;
+    text-align: center;
+    display: inline-block;
+}
+.registryEntry>div .storegis{
+    width: 260px;
+    text-align: center;
+    margin: 0 auto;
+} 
+.storeClass{
+    margin-top:20px;
+    margin-bottom:10px;
+}
+.registryEntry>div  a{
+    padding: 10px 20px;
+    background: #ff4c4c;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+}
+.registryEntry>div  a.enterbtn{
+    background:#fcb7b7
+}
+.registryEntry{
+    padding:50px 0
+}
+.noticebox p{
+    color:#333;
+    font-size:14px;
+    margin-bottom:10px
+}
+.noticebox{
+    padding-right: 60px;
+    margin-bottom:100px;
+    margin-top: 30px;
+}
+.noticeBtn{
+    text-align: center;
+    margin-top: 95px;
+    padding-bottom: 60px;
+}
+.noticeBtn a{
+    width:200px;
+    height:45px;
+    line-height:45px;
+    display: inline-block;
+    text-align: center;
+    background:#ff4c4c;
+    border-radius: 5px;
+    color:#fff;
+    font-size: 18px
+}
+.lableleft{
+    width:130px;
+    text-align: left;
+    display: inline-block;
+}
+.titleRight{
+    color:#666
+}
+.authenTitle{
+    margin-bottom:15px;
+}
+.authenTitle .titleLeft{
+    font-size: 14px;
+    font-weight:bold;
+}
+.authentication .layui-form-label{
+    width:130px;
+    padding:0;
+    line-height:32px;
+    text-align: left;
+}
+.authentication .layui-input{
+    line-height: 32px;
+    height:32px;
+}
+.authentication{
+    margin-top:60px;
+    margin-left: 160px;
+    min-width:675px;
+    max-width:800px;
+    margin-right: 77px;
+}
+.inputbox {
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #dadada;
+    margin-bottom: 30px;
+}
+.mainmsg input{
+    border:1px solid #ff4c4c
+}
+.layui-form-item .layui-inline{
+    margin-right:64px
+}
+.layui-form-item  textarea{
+    width:590px;
+    resize:none;
+}
+.authenticationbtn{
+    text-align: center; 
+    padding-bottom: 50px;
+}
+.authenticationbtn a{
+    display: inline-block;
+    width:170px;
+    height: 50px;
+    line-height: 50px;
+    background:#ff4c4c;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+}
+.authenticationbtn a.btnNO{
+    background:#fcb7b7
+}
+.imgbox{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px dashed #848585;
+    text-align: center;
+}
+.imgbox img{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.upimgbox{
+    width: 198px;
+    height: 198px;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    vertical-align: middle;
+    background: #fff;
+    z-index:-1
+}
+.upimgbox img{
+    max-width: 100%;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.regHead{
+    background:#ff4c4c;
+    height: 80px;
+    line-height: 80px;
+    color:#fff;
+    text-indent: 20px;
+    position: relative;
+}
+.regHead>p {
+    width:1200px;
+    margin:0 auto;
+    text-indent: 40px;
+}
+
+.regHead>p span{
+    margin-left: 40px
+}
+.layui-content{
+    padding:20px 380px
+}
+.headmsg img{
+    width:40px;
+    height: 40px;
+    border-radius: 50%;
+
+}
+
+.headmsg{
+    position: absolute;
+    right: 32px;
+    top: 0;
+}
+
+
+.auditbox{
+    min-height: 400px;
+    text-align: center;
+    margin-top: 100px;
+    color: #666;
+}

@@ -1,0 +1,3 @@
+<?php
+//000000000000a:11:{s:10:"sms_appkey";s:16:"LTAIdp9wXmHcZRy3";s:13:"sms_secretKey";s:30:"exSZIT6zNdSdG57btSPMzUlx6HYuYd";s:11:"sms_product";s:9:"必量家";s:16:"sms_templateCode";s:13:"SMS_164278618";s:16:"regis_sms_enable";s:1:"1";s:12:"sms_time_out";s:3:"120";s:21:"forget_pwd_sms_enable";s:1:"1";s:22:"bind_mobile_sms_enable";s:1:"1";s:20:"order_add_sms_enable";s:1:"1";s:20:"order_pay_sms_enable";s:1:"1";s:25:"order_shipping_sms_enable";s:1:"1";}
+?>

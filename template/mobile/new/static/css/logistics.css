@@ -1,0 +1,117 @@
+.logisticmsg{
+    padding-left:60px;
+    padding-right: 10px
+}
+.logisticmsg  ul li{
+    color:#8d8d8d;
+    padding-top:25px;
+}
+.logisticmsg  ul li p{
+    line-height: 16px;
+}
+.logisticmsg  ul li{
+    content:'';
+    /* border-left:1px dashed #000; */
+    padding-left: 39px;
+    position: relative;
+}
+.logisticmsg ul li i{
+   
+    display: block;
+    position: absolute;
+    left: -13px;
+    width:23px;
+    height: 23px;
+    top: 50%;
+}
+.logisticmsg ul li.waitpress i{
+    background:url("../images/newimg/goods/waitpress.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitship i{
+    background:url("../images/newimg/goods/waitship.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitremoval i{
+    background:url("../images/newimg/goods/waitremoval.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitentrepot i{
+    background:url("../images/newimg/goods/waitentrepot.png") no-repeat;
+    background-size: 100%;
+}
+
+.logisticmsg ul li.waitTake i{
+    background:url("../images/newimg/goods/waitTake.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitDeli i{
+    background:url("../images/newimg/goods/waitDeli.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitde i{
+    background:url("../images/newimg/goods/waitde.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.receiveg i{
+    background:url("../images/newimg/goods/receiveg.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.reveice i{
+    background:url("../images/newimg/goods/reveice.png") no-repeat;
+    background-size: 100%;
+}
+
+
+
+.logisticmsg ul li.now{
+    color:#2c2c2c
+}
+.logisticmsg ul li.waitpress.now i{
+    background:url("../images/newimg/goods/press.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitship.now i{
+    background:url("../images/newimg/goods/ship.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitremoval.now i{
+    background:url("../images/newimg/goods/removal.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitentrepot.now i{
+    background:url("../images/newimg/goods/entrepot.png") no-repeat;
+    background-size: 100%;
+}
+
+.logisticmsg ul li.waitTake.now i{
+    background:url("../images/newimg/goods/take.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitDeli.now i{
+    background:url("../images/newimg/goods/Deli.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li.waitde.now i{
+    background:url("../images/newimg/goods/de.png") no-repeat;
+    background-size: 100%;
+}
+.logisticmsg ul li div{
+    position: relative;
+}
+.logisticmsg ul li div:after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    border-left: 1px dashed #000;
+    width: 1px;
+  
+    top: 6px;
+    left: -41px;
+    bottom: -35px;
+    z-index: -1;
+}
+.logisticmsg ul li:last-child div:after{
+    border-left:none
+}

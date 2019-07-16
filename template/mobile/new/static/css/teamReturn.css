@@ -1,0 +1,338 @@
+.grade01{
+    background:#333;
+    padding:10px 15px;
+    padding-bottom:21px;
+}
+.gradeonebox {
+    background:url("../images/newimg/usr/gradebg.png") no-repeat;
+    background-size:100%;
+    padding-left:17px;
+    height: 190px;
+}
+
+.gradeoneimg {
+    width:63px;
+    height: 63px;
+    border-radius: 50%;
+    padding-top:40px
+
+}
+.gradeoneimg  img{
+    max-width: 100%;
+    border-radius: 50%
+}
+
+
+.proggress:after{
+    content: '';
+    width: 10px;
+    height: 6px;
+    background: #fff;
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    border: 1px solid #ca9759;
+    border-radius: 5px;
+}
+.proggress{
+    background: -webkit-linear-gradient(left, #c99758, #f6d7a3); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left, #c99758, #f6d7a3); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left, #c99758, #f6d7a3); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #c99758, #f6d7a3); /* 标准的语法（必须放在最后） */
+    position: relative;
+}
+.progressbar {
+    width: 100%;
+	margin-top: -5px;
+	position: relative;
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,.1);
+    background-color: #e3e3e3;
+    border-radius: 5px;
+}
+
+#progressbar1{
+    width:210px
+}
+.proggress{
+	height: 4px !important;
+	width: 10px;
+	background-color: #3498db;
+}
+
+.percentCount{
+	float:right;
+	margin-top: 10px;
+	clear: both;
+	font-weight: bold;
+	font-family: Arial
+}
+.gradeoneline {
+    padding-top:48px;
+    margin-left:10px
+}
+.gradeoneline p{
+    color:#7a5b2a;
+    font-size:18px;
+    line-height: initial;
+    margin-bottom: -5px;
+}
+.gradeoneline span{
+    color:#999999
+}
+.percentCount{
+    line-height: initial;
+    font-size: 10px;
+    color: #ff4c4c;
+}
+
+.gradeclass span{
+    color:#333333;
+    font-size:10px
+}
+.gradeclass{
+    width: 100%;
+    line-height: 0px;
+    margin-top: 13px;
+}
+.gradetext {
+    color:#333;
+    margin-top:15px;
+}
+.gradetext p{
+    line-height: initial;
+}
+.grade02Class{
+    background:#4e4e4e;
+    padding:15px;
+    border-radius: 10px;
+    margin-top:-10px
+}
+
+.grade02Class ul li{
+    width:25%;
+    float:left;
+    text-align: center;
+   
+}
+.grade02Class ul li a p{
+    color:#fff;
+}
+.grade02Class ul li p{
+    margin-top:-5px;
+}
+
+.maintitle{
+    color:#333333;
+    font-size:15px;
+    padding-top:25px;
+    padding-bottom:15px;
+}
+.myteam,.privilege{
+    padding:0 15px;
+   
+}
+.privilege{
+    margin-bottom:30px
+}
+.teamlist{
+    border:1px solid #dbdbdb;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.teamlist ul li{
+    float:left;
+    width:25%;;
+    text-align: center;
+    color:#333
+}
+.teamlist ul>img{
+    width:63px;
+    height: 63px;
+    margin-left:10px
+}
+.teamlist ul li div{
+    width:63px;
+    height:63px;
+    border-radius: 50%;
+    margin:0 auto
+}
+.teamlist ul li div img{
+    max-width: 100%;
+    border-radius: 50%;
+} 
+.prilist{
+    border:1px solid #dbdbdb;
+    border-radius: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.prilist ul li{
+    float:left;
+    width:33.3%;
+    text-align:center;
+    color:#333;
+}
+.prilist ul li div{
+    width:63px;
+    height: 63px;
+    margin:0 auto
+}
+.prilist ul li div img{
+    max-width: 100%
+}
+
+.growth{
+    margin:0px 15px;
+    box-shadow: 0px 4px 7px 1px rgba(116,116,116,.3);
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding-top: 10px;
+}
+.growth h3{
+    font-weight: normal;
+    color: #333;
+    font-size: 12px;
+    text-indent: 10px;
+    margin-bottom: -30px;
+}
+
+.prilist img{
+    width:54px;
+    height:54px;
+}
+
+/* 返利 */
+.returnimg{
+    width:55px;
+    height:55px;
+    border-radius: 50%;
+    margin-right:13px;
+}
+.returnimg img{
+    max-width: 100%;
+    border-radius: 50%
+}
+.teamreturnmsg {
+    background:url("../images/newimg/usr/teamreturnbg.png") no-repeat;
+    background-size:100% 200px;
+    height:190px;
+    padding-left:15px;
+    padding-top:45px
+}
+.teamrebate{
+    background:#f4ecec
+}
+.teamreturnmsg span{
+    color:#fc9f9f
+}
+.teamreturnmsg p{
+    color:#fff;
+    margin-bottom:-20px;
+}
+.earnings {
+    padding:18px 20px;
+    background:#fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px 1px rgba(116,116,116,.3);
+    margin: 0 15px; 
+    margin-top: -100px;
+}
+.earnings ul li{
+    float:left;
+    width:50%;
+    text-align: center;
+}
+.earnings ul li p{
+    color:#666;
+    margin-bottom: -8px;
+}
+.returnNum:after{
+    content:"";
+    width:1px ;
+    height: 29px;
+    background:#e4e4e4;
+    position: absolute;
+    top:22px;
+    right: 0;
+}
+.earninglist>p{
+    color:#111;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.earninglist{
+    background:#fff;
+    margin:0 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 7px 1px rgba(116,116,116,.3);
+    margin-top:15px;
+    padding-bottom:20px
+}
+
+.earningL img{
+    width:18px;
+    height:18px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.earningL p,.earningr{
+    color:#666
+}
+
+.earninglist ul li{
+    height:45px;
+    line-height:45px;
+    border-bottom:1px solid #e4e4e4;
+    
+}
+.earninglistdetailBox{
+    border-top:1px solid #e4e4e4;
+    margin:0 15px;
+}
+
+
+.teamOther .teamreturnmsg{
+    background-size: 100% 162px;
+    height: 117px;
+    text-align: center;
+}
+.teamOther .returnimg{
+    margin: 0 auto;
+    margin-top: -25px;
+}
+.wealthbox .hd ul  li{
+    float:left;
+    width:25%;
+    text-align: center;
+    color:#666666;
+    line-height: 40px;
+    height:40px;
+    margin-bottom:-1px
+}
+.wealthbox .hd ul  li.on{
+    border-bottom:1px solid #ff4c4c
+}
+.wealthbox .bd ul li img{
+    width:217px;
+    height:235px;
+}
+.wealthbox .hd{
+    margin-bottom:60px;
+    border-bottom: 1px solid #e4e4e4;
+}
+.wealthbox .bd ul li{
+    text-align: center;
+}
+.wealthbox{
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    padding-bottom:80px;
+}
+.wealthlist{
+    padding: 0 15px;
+    margin-top:20px
+}

@@ -1,0 +1,303 @@
+/* 新增收货人信息 */
+.datelist .dateone input{
+    margin-left:10px
+}
+.datelist {
+    padding-left:10px
+}
+.adressDetail {
+    height: 100px;
+}
+.adressDetail textarea{
+    margin:14px 0 10px  15px;
+    width: 70%;
+    border:none;
+    resize:none
+}
+
+
+/* 收货人信息列表 */
+.addreslist{
+    margin-left:10px
+}
+.addreslist p{
+    color:#000;
+    font-size: 12px;
+    line-height: 25px;
+}
+.addreslist ul li{
+    padding:15px 0;
+    border-bottom:1px solid #333635
+}
+.addreslist ul li img{
+    width:20px;
+    height: 20px;
+    margin-right: 10px
+}
+
+/* 确认订单 */
+ 
+.addreslist ul li .nextimg img{
+    width:6px;
+    height: 11px;
+}
+.goodsDetail {
+    position: relative;
+}
+.goodsDetail h3{
+    font-weight: normal
+}
+.goodsimg{
+    width:100px;
+    height: 100px;
+}
+.goodsimg img{
+    max-width: 100%;
+}
+.goodsDetail{
+    padding:15px 10px;
+    border-bottom:1px solid #000;
+    margin-left:10px
+}
+.goodsIntrdouce{
+    margin-top:10px;
+    margin-left:15px;
+}
+.goodsIntrdouce p{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.goodsIntrdouce p,.goodsIntrdouce h3{
+    line-height: normal
+}
+.goodsCount {
+    position: absolute;
+    right:10px;
+    bottom:17px;
+}
+.subtotal{
+    text-align: right;
+    padding-right: 10px;
+    border-bottom: 1px solid #000;
+    height: 45px;
+    line-height: 45px;
+}
+.choosecoupon{
+    padding:0 10px;
+    line-height: 45px;
+    height: 45px;
+    border-bottom:1px solid #000;
+    margin-bottom:40px
+}
+.choosecoupon img{
+    width:6px;
+    height: 10px;
+}
+.actuallyPay{
+    margin-left:10px;
+    padding-right: 10px;
+    line-height: 45px;
+    height: 45px;
+    border-bottom:1px solid #000
+}
+/* 生成订单 */
+.orderCreateDetail {
+    border-bottom:1px solid #000;
+    margin-left:10px;
+    padding: 5px 0;
+}
+.orderCreateDetail p{
+    line-height: 30px;
+}
+.orderTime {
+    padding:15px 10px;
+    border-bottom:3px solid #ababab
+}
+.orderTime p{
+    line-height: normal
+}
+.payment {
+    margin-top:45px;
+}
+
+.paymentbox {
+    width:100%
+}
+.payment {
+    padding-left:10px
+}
+.paymentImg img{
+    width:20px;
+    height:20px;
+    margin-right: 20px
+}
+.paymentbox img{
+    width:20px;
+    height: 20px;
+    padding-right: 10px
+}
+.paymentlist{
+    border-bottom:1px solid #333635
+}
+.paymentlist ul li{
+    line-height: 50px;
+    
+}
+.payment h3{
+    border-bottom:1px solid #333635;
+    font-weight: normal
+}
+.paymentbox{
+    border-bottom:1px solid #333635
+}
+.lastLI .paymentbox,.lastLI{
+    border-bottom:0 !important
+}
+
+/* 订单详情 */
+.orderDetail .orderCreateDetail{
+    border-bottom:3px solid #e9e9e9;
+    margin-left:0;
+    padding-left:10px
+}
+.goodsDetailimg {
+    width:100px;
+    height: 100px;
+    margin-right: 15px;
+}
+.goodsDetailimg img{
+    max-width: 100%
+}
+.goodsDetailMsg {
+    width:67%
+}
+.goodsDetailMsg p{
+    line-height: normal
+}
+.goods_detail{
+    padding:15px 10px;
+    border-bottom:3px solid #e9e9e9;
+}
+.goodsReceive {
+    padding:15px 10px;
+    border-bottom:1px solid #333635
+}
+.goodsReceive p{
+    line-height:25px;
+}
+.orderDetail .paymentlist{
+    margin-left:10px
+
+}
+.orderDetail .paymentlist   ul li{
+    padding-right: 10px;
+    border-bottom:1px solid #333635
+}
+.orderDetail .paymentlist   ul li img{
+    width:20px;
+    height: 20px;
+    margin-right: 15px
+}
+.payPrice {
+    line-height: 50px;
+    padding-right: 10px;
+    border-bottom:1px solid #333635
+}
+
+
+
+/* 订单评价 */
+.gradelist ul li {
+    float:left;
+
+}
+.gradeimg {
+    width:38px;
+    height: 38px;
+    margin-left:10px;
+    margin-right: 15px;
+}
+.gradeimg  img{
+    max-width: 100%
+}
+.badGrade{
+    color:#6c6c6c
+}
+.gradelist ul li{
+    width:20px;
+    height: 20px;
+    float:left;
+    margin-right:10px;
+}
+.gradelist ul li img{
+    max-width: 100%;
+}
+.productgrade{
+    height:75px;
+    line-height: 15px;
+    border-bottom:3px solid #e9e9e9
+} 
+.badGrade {
+    padding-right:20px;
+    width: 60px;
+    text-align: right;
+}
+.evaluate{
+    padding-left: 20px;
+    padding-right: 10px;
+    border-bottom:3px solid #e9e9e9;
+    padding-bottom:15px;
+}
+.evaluate textarea{
+    width: 100%;
+    border: none;
+    margin-top: 15px;
+    resize:none
+}
+.cameraimg {
+    width:65px;
+    height:65px;
+    border:1px dashed #848585;
+    text-align: center;
+}
+.cameraimg img{
+    width:28px;
+    height: 24px;
+}
+.cameraimg p{
+    color:#6c6c6c;
+    font-size: 12px;
+    line-height: 25px;
+}
+.storeEvalute {
+    padding-left:20px
+}
+.storeEvalute p{
+    margin-left:15px;
+  
+}
+.evalutelist>ul>li  {
+    line-height:15px;
+    margin-top:10px
+}
+.evalutelist ul li ul li{
+    width:20px;
+    height: 20px;
+    float:left;
+    margin-right:10px;
+}
+.evalutelist ul li  ul li img{
+    max-width: 100%;
+}
+.evalutelist ul li p{
+    margin-right: 20px
+}
+.gradelist ul li,.logisticslist ul li,.servelist ul li {
+    background:url("../images/newimg/goods/gradeNull.png") no-repeat;
+    background-size: 100%;
+}
+
+.gradelist ul li.active,.logisticslist ul li.active,.servelist ul li.active {
+    background:url("../images/newimg/goods/grade.png") no-repeat;
+    background-size: 100%;
+}

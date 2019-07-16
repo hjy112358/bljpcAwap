@@ -1,0 +1,35 @@
+.registerbg{
+    background:url("../images/newimg/usr/registarbg.png") no-repeat;
+    background-size:100% 223px;
+    height: 223px;
+    margin-top:-1px
+}
+.registerform{
+    padding:0 63px;
+    margin-top:25px;
+}
+.formbox input{
+    border:0;
+    margin-bottom: -5px;
+}
+.formbox{
+    border-bottom:1px solid #c3c3c3;
+    padding-left:10px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+.formbox img{
+    margin-right: 8px;
+}
+
+#registerbtn{
+    width: 100%;
+    display: block;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 20px;
+    background:#ff4c4c;
+    color:#fff;
+    margin-top:35px
+}

@@ -1,0 +1,440 @@
+body{
+    background:#f2f2f2;
+    padding-bottom:50px;
+}
+.storemsg{
+    color:#fff;
+    padding:20px 25px;
+}
+.storeimgs {
+    width:44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.storeimgs  .storeimg{
+    max-width: 100%;
+    border-radius: 50%
+}
+.storelogo{
+   bottom:0;
+   right:0;
+   width:13px;
+   height:13px;
+}
+.crownlist {
+    margin-right: 10px
+}
+.crownlist ul li{
+    float:left;
+    width:17px;
+    height: 13px;
+    line-height: 13px;
+}
+.crownlist ul li img{
+    max-width: 100%
+}
+.attention{
+    width:61px;
+    height:28px;
+    line-height:28px;
+    text-align:center;
+    border-radius:16px;
+    border:1px solid #fff;
+}
+.storename p{
+    line-height: initial
+}
+.storename>p{
+    margin-bottom:8px
+}
+
+.indexlit img{
+    max-width: 100%
+}
+.newgoods{
+    background:#fff;
+    border-radius: 10px;
+    height:50px;
+    line-height: 50px;
+
+}
+.classifybox{
+    padding:0 10px;
+}
+.newgoods{
+    padding:0 15px;
+    margin:10px 0
+}
+.goodsimgs img{
+    max-width: 100%
+}
+.scrollimg li img{
+    width:100%
+}
+#leftTabBox1 .hd{
+    height:362px;
+}
+#scrollimg{
+    margin-bottom:5px;
+}
+#nav {
+    padding-bottom:15px;
+}
+#nav  ul li {
+    float:left;
+    text-align: center;
+    color:#fff;
+    position: relative;
+}
+#nav  ul li.active-nav p:after{
+    content:'';
+    width:30px;
+    height: 3px;
+    background:#fff;
+    border-radius: 15px;
+    position: absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-15px
+}
+
+.swiper-slide.points{
+    width: 10px;
+    height: 10px;
+    border: 50%;
+    border-radius: 50%;
+    background: #fff;
+}
+#nav3 ul li p{
+    color:#fff;
+    text-align: center;
+}
+#nav3 ul li.active-nav{
+    background:#fff;
+  
+    border-radius: 20px;
+}
+#nav3 ul li.active-nav p{
+    color:#ff4c4c
+}
+#nav3{
+    padding-left:25px;
+    padding-bottom:15px;
+}
+#nav3 ul li{
+    height:25px;
+    line-height:25px;
+}
+.goodslist ul li{
+    width: 49%;
+    float: left;
+    background: #fff;
+    /* max-width: 174px; */
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom:5px;
+}
+.goodslist ul li a>p{
+    text-align:left;
+    padding-left:5px;
+    padding-top:5px;
+    height: 40px;
+    line-height:20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.goodslist ul li .googsimg{
+    width:100%;
+    height:190px
+}
+
+.goodslist ul li:nth-child(odd){
+    margin-right: 2%
+}
+.goodslist ul li .googsimg img{
+    max-width: 100%;
+    border-radius: 10px;
+}
+.goodslist ,.newgoodlsit{
+    padding:10px
+}
+.goodpay{
+    margin-left:10px;
+    color:#8f8f8f
+}
+
+.imgl img ,.imgr img{
+    max-width: 100%
+}
+
+
+.imgl{
+    width:275px;
+    height: 154px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.imgr{
+    height:76px;
+    width:76px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.updatelist h3{
+    color:#656464;
+    font-weight: normal
+}
+.newlsit ul li {
+    width:49%;
+    float:left;
+    max-width: 173px;
+    background:#fff;
+    border-radius: 10px;
+    margin-bottom:5px;
+}
+.newlsit ul li:nth-child(odd){
+    margin-right: 2%
+}
+.newlsit ul li img{
+    max-width: 100%
+}
+.newlsit ul li p{
+    height:40px;
+    line-height: 20px;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-top:10px;
+}
+.storefooter{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 9;
+    background: #fff;
+    box-shadow: 0 1px 3px 0px rgba(0,0,0,.6);
+}
+.storefooter ul li{
+    float:left;
+    width:33.3%;
+    text-align: center;
+}
+.storefooter ul li p{
+    line-height:0px;
+}
+.storefooter ul li img{
+    margin-top:-11px
+}
+.searchbox input{
+    height: 27px;
+    line-height: 27px;
+    border:1px solid #fff;
+    border-radius: 20px;
+    padding-left: 38px;
+    position: relative;
+    background: #ff4c4c;
+    color: #fff;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    width:88%;
+}
+.inputbox:before{
+    content:"";
+    background:url("../images/newimg/store/searchW.png") no-repeat;
+    background-size:100%;
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+}
+.searchbox {
+    text-align: center;
+    
+}
+.inputbox{
+    width: 85%;
+    margin:0 auto
+}
+.searchbox input::-webkit-input-placeholder {
+    color: #fff;
+}
+.classifylist>ul>li{
+    background:#fff;
+    border-radius: 10px;
+    padding:14px 15px 5px 15px;
+    margin-top:10px
+}
+.classifylist>ul>li ul li{
+    float:left;
+    width:49%;
+    text-align: center;
+    color:#656464;
+    height:38px;
+    line-height: 38px;
+    background:#efefef;
+    border-radius: 10px;
+    margin-bottom:5px
+    
+}
+.classifylist>ul>li ul li:nth-child(odd){
+    margin-right: 2%
+}
+.classifyTitle{
+    margin-bottom:5px;
+}
+.classifylist {
+    padding:0 10px
+}
+.classifydetails{
+    padding-bottom:15px;
+}
+#nav4{
+    padding-top:10px
+}
+#nav4 ul li{
+    text-align: center;
+}
+#nav4 ul li.active-nav{
+    color:#ff4c4c
+}
+.inputboxhead{
+    width:80%;
+    margin:0 auto
+}
+.inputboxhead input{
+    width:100%;
+    border: 0;
+    border-radius: 20px;
+    height: 28px;
+    line-height: 28px;
+    text-indent: 45px;
+    margin-top: -3px;
+}
+.inputboxhead  input::-webkit-input-placeholder {
+    color: #f2f2f2;
+}
+.inputboxhead:before{
+    content:"";
+    background:url("../images/newimg/store/searchR.png") no-repeat;
+    background-size:100%;
+    position: absolute;
+    top: 23px;
+    left: 12px;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+
+}
+
+.storelist #nav li p{
+    color:#000
+}
+.storelist #nav{
+    margin-top:10px;
+    padding-bottom:10px;
+}
+.storelist #nav li.active-nav p{
+    color:#ff4c4c
+}
+.storelist  #nav ul li.active-nav p:after{
+    width:0
+}
+.storelist .storeimg{
+    width:39px;
+    height: 39px;
+    border-radius: 50%;
+    margin-right:15px
+}
+.storelist .storeimg img{
+   max-width: 100%;
+   border-radius: 50%;
+}
+.storesbox{
+    padding:0 10px;
+}
+.storesbox ul li{
+    background:#fff;
+    border-radius: 10px;
+    padding:15px;
+    margin-bottom: 10px;
+
+}
+.storesbox ul li p{
+    line-height: 20px;
+}
+.col8f{
+    color:#8f8f8f
+}
+.storesbox ul li .goIn{
+    width:45px;
+    height:20px;
+    line-height: 20px;
+    border:1px solid #ff4c4c;
+    border-radius: 10px;
+    text-align: center;
+    color:#ff4c4c;
+    display: block;
+}
+.storegoodsimg{
+    margin-top:15px;
+}
+.storegoodsimg div{
+    width: 31%;
+    height: 105px;
+    border-radius: 20px;
+    margin-right: 2%;
+}
+.storegoodsimg div img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+.storelist .inputbox input{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 20px;
+    border: 0;
+    margin-top: -4px;
+    text-indent: 45px;
+}
+.storelist .inputbox input::-webkit-input-placeholder {
+    color: #f2f2f2;
+}
+.storelist  .inputbox:before{
+    background: url(../images/newimg/store/searchR.png) no-repeat;
+    top:24px;
+    background-size: 100%
+}
+.storefocus{
+    position: relative;
+}
+.storefocus .hd ul li{
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    background:#fff;
+    margin-right: 9px;
+    float:left;
+}
+.storefocus .hd ul li.on{
+    background:#ff4c4c
+}
+.storefocus .hd{
+    position:absolute;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index: 2;
+}

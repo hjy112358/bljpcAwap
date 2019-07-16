@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="Generator" content="TPshop v1.1" />
+    <meta charset="UTF-8">
+    <!-- <title>挂售列表</title> -->
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/index.css" />
+    <link rel="stylesheet" href="__STATIC__/css/topdetail.css">
+    <link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+    <script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/jquery.json.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/touchslider.dev.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+    <script src="__PUBLIC__/js/global.js"></script>
+    <script src="__PUBLIC__/js/mobile_common.js"></script>
+    <style>
+        .tradecodelist ul li {
+            line-height: 50px;
+        }
+
+        .tradecodelist {
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body class="tradez">
+    <div class="wrap tradewrap">
+        <!-- <div class="pubhead maincolorbg">
+            <a href="javascript:history.back(-1)">
+                <p>挂售列表</p>
+            </a>
+        </div> -->
+        <!-- <div class="maincolorbg flex jus-between align-c tophead">
+            <a href="javascript:history.back(-1)" class="iconfont icon-fanhui2"></a>
+            <p class="font-18">挂售列表</p>
+            <a href=""></a>
+        </div> -->
+        <!-- <div class="maincolorbg tophead " id="topAnchor" style="text-align: center;">
+            <p class="font-18" style="margin-left:0">挂售列表</p>
+        </div> -->
+        <div class="setting" style="background:none">
+           
+            <div class="transtype">
+                <div class="tickets clearfix">
+                    <ul>
+                        <li>
+                            <p>数量</p>
+                            <span class="maincolor">{$sum}</span>
+                        </li>
+                        <li>
+                            <p>今日券值</p>
+                            <span class="maincolor">{$ticket_price}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tradecode">
+                <ul>
+                    <li>
+                        <div class="tradecodelist">
+                            <ul>
+                                <foreach name="sell_all" key="k" item="v">
+                                <li class="flex align-c">
+                                    <img src="__STATIC__/images/newimg/usr/buy.png" alt="">
+                                    <div class="tradedetail flex  align-c jus-between">
+                                        <p>{$v.sell_number}张挂售券</p>
+                                        <span data-num="{$v.sell_number}" data-userid="{$v.sell_user_id}" data-id="{$v.sell_id}" >买入</span>
+                                    </div>
+                                </li>
+                                </foreach>
+
+                            </ul>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(".tradecodelist ul li").each(function(){
+        var _this=$(this);
+        _this.find("span").on("click",function(){
+            var sellNum=$(this).attr("data-num");
+            var sellId=$(this).attr("data-id");
+            var sellUserId=$(this).attr("data-userid");
+
+            $.ajax({
+                url:"{:U('User/scaleList_do')}",
+                data:{sellNum:sellNum,sellId:sellId,sellUserId:sellUserId},
+                type:"POST",
+                success:function(res){
+                    if (res==1) {
+                        alert('购买成功');
+                        window.location.reload();
+                        return false;
+                    } else {
+                        alert('购买失败');
+                    }
+                }
+            })
+            return false
+        })
+    })
+
+</script>
+
+</html>

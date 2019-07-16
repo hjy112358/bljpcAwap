@@ -1,0 +1,307 @@
+<include file="public/layout" />
+<link rel="stylesheet" href="/public/assets/css/layui.css" type="text/css">
+<script src="/public/assets/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script src="/public/assets/layui.all.js" type="text/javascript"></script>
+<script src="/public/assets/js/TouchSlide.1.1.js" type="text/javascript"></script>
+<style>
+    .layui-upload .mark_button {
+        position: absolute;
+        right: 15px;
+    }
+
+    .upload-img {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        margin: 0 10px 10px 0;
+        transition: box-shadow .25s;
+        border-radius: 4px;
+        box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.1);
+        transition: 0.25s;
+        -webkit-transition: 0.25s;
+        margin-top: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .layui-upload-img {
+        max-width: 100%;
+        border-radius: 4px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .upload-img input {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: 999;
+    }
+
+    .upload-img button {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        border-radius: 6px;
+    }
+</style>
+
+<body style="background-color: #FFF; overflow: auto;">
+    <div class="page">
+        <div class="fixed-bar">
+            <div class="item-title"><a class="back" href="javascript:history.back();" title="返回列表"><i
+                        class="fa fa-arrow-circle-o-left"></i></a>
+                <div class="subject">
+                    <h3>商品图片</h3>
+                    <h5>上传商品图片</h5>
+                </div>
+            </div>
+        </div>
+        <!--表单数据-->
+        <form method="post" id="" enctype="multipart/form-data">
+            <div class="layui-upload ">
+                <blockquote class="layui-elem-quote layui-quote-nm" style="margin-top: 10px;">
+                    预览图：
+                    <div class="layui-upload-list" id="imgs">
+                        <volist name="imgs_list" id="vo">
+                            <div class="upload-img" filename="" data-id="{$vo.img_id}">
+                                <input type="checkbox" name="" lay-skin="primary">
+                                <img src="{$vo.image_url}" alt="" class="layui-upload-img">
+                            </div>
+                        </volist>
+                    </div>
+                </blockquote>
+                <div class="mark_button">
+                    <button type="button" class="layui-btn layui-btn-normal" id="sele_imgs">选择文件</button>
+                    <button type="button" class="layui-btn" id="upload_imgs" disabled>开始上传</button>
+                    <button type="button" class="layui-btn layui-btn-danger" id="dele_imgs">删除选中图片</button>
+                </div>
+                <input type="hidden" name="goods_id" value="{$goods_id}">
+            </div>
+        </form>
+    </div>
+
+
+    <script id="img_template" type="text/html">
+
+        <div class="upload-img" filename="{{ d.index }}">
+            <input type="checkbox" name="" lay-skin="primary">
+            <img src="{{  d.result }}" alt="{{ d.name }}" class="layui-upload-img">
+        </div>
+    </script>
+
+
+    <script>
+
+        layui.use(['upload', 'laytpl', 'form'], function () {
+            var $ = layui.jquery
+                , upload = layui.upload
+                , laytpl = layui.laytpl
+                , form = layui.form;
+
+            //批量删除 单击事件
+            $('#dele_imgs').click(function () {
+                var ids = [];
+                $('input:checked').each(function (index, value) {
+                    var _this = $(this);
+                    var filename = _this.parent().attr("filename");
+
+                    if (filename == '') {
+                        _this.parent().attr("data-id");
+                        ids.push(_this.parent().attr("data-id"));
+
+
+                    } else {
+                        delete imgFiles[filename];
+                        var index_two = _this.parent().index();
+                        imgfiles.splice(index_two, 1);
+                        _this.parent().remove()
+                    }
+
+                });
+            
+                if (ids.length > 0) {
+                    var idstring = ids.join(","); 
+                    $.ajax({
+                        type: 'post',
+                        url: "{:url('partner/delimg')}",
+                        data: { ids: idstring },
+                        success: function (data) {
+                            if (data['status'] == '1') {
+                                layer.msg("删除成功");
+                                window.location.reload();
+                            } else {
+                                layer.msg("删除失败");
+                                return false;
+                            }
+                        }
+
+                    })
+
+                }
+
+
+
+            });
+            var imgfiles = [];
+            var imgs = '';
+            // 上传图片
+            $("#upload_imgs").on("click", function () {
+                for (var i = 0; i < imgfiles.length; i++) {
+                    var nums = i;
+                    var formData = new FormData();
+                    formData.append('goods_img', imgfiles[i]);
+                    if (nums == (imgfiles.length - 1)) {
+                        $.ajax({
+                            url: "{:U('/admin/Uploadify/uploadsgoodsimg')}",
+                            type: 'POST',
+                            data: formData,
+                            dataType: 'JSON',
+                            processData: false,
+                            cache: false,
+                            contentType: false,
+                            success: function (ret) {
+                                
+                                if (ret == 0) {
+                                    layer.msg('图片上传失败！')
+                                    return false;
+                                } else {
+
+                                    if (imgs == '') {
+                                        imgs = ret;
+                                    } else {
+                                        imgs = imgs + ',' + ret;
+                                    }
+                                   
+                                    var goods_id = $("input[name='goods_id']").val();
+                                    $.ajax({
+                                        url: "{:U('partner/addimgs')}",
+                                        type: 'POST',
+                                        data: {imgs: imgs, goods_id: goods_id },
+                                        success: function (data) {
+                                            // console.log(data);return false;
+                                            if (data['status'] == '1') {
+                                                layer.msg('上传成功');
+                                                window.location.reload();
+                                            } else {
+                                                layer.msg('上传失败');
+                                                return false;
+                                            }
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    } else {
+                        $.ajax({
+                            url: "{:U('/admin/Uploadify/uploadsgoodsimg')}",
+                            type: 'POST',
+                            data: formData,
+                            dataType: 'JSON',
+                            processData: false,
+                            cache: false,
+                            contentType: false,
+                            success: function (ret) {
+                                if (ret == 0) {
+                                    layer.msg('图片上传失败！')
+                                    return false;
+                                } else {
+
+                                    if (imgs == '') {
+                                        imgs = ret;
+                                    } else {
+                                        imgs = imgs + ',' + ret;
+                                    }
+
+                                }
+                            }
+                        })
+                    }
+
+
+                }
+                //console.log(imgfiles)
+
+
+
+
+
+
+
+
+
+            })
+
+
+
+            var imgFiles;
+
+            //多图片上传
+            var uploadInst = upload.render({
+                elem: '#sele_imgs'  //开始
+                , acceptMime: 'image/*'
+                // , url: '/upload/'
+                , auto: false
+                // , bindAction: '#upload_imgs'
+                , multiple: true
+                , size: 1024 * 12
+                , choose: function (obj) {  //选择图片后事件
+                    var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+                    imgFiles = files;
+
+                    $('#upload_imgs').prop('disabled', false);
+
+                    //预读本地文件示例，不支持ie8
+                    obj.preview(function (index, file, result) {
+                        var data = {
+                            index: index,
+                            name: file.name,
+                            result: result
+                        };
+                        imgfiles.push(file)
+                        //将预览html 追加
+                        laytpl(img_template.innerHTML).render(data, function (html) {
+                            $('#imgs').append(html);
+                        });
+
+                        //绑定单击事件
+                        $('#imgs div:last-child>img').click(function () {
+                            var isChecked = $(this).siblings("input").prop("checked");
+                            $(this).siblings("input").prop("checked", !isChecked);
+                            return false;
+                        });
+
+                    });
+                }
+                , before: function (obj) { //上传前回函数
+                    layer.load(); //上传loading
+                }
+                , done: function (res, index, upload) {    //上传完毕后事件
+
+                    layer.closeAll('loading'); //关闭loading
+                    //上传完毕                          
+
+                    $('#imgs').html("");//清空操作
+
+                    top.layer.msg("上传成功！");
+
+                    return delete imgFiles[index]; //删除文件队列已经上传成功的文件
+
+                }
+                , error: function (index, upload) {
+
+                    layer.closeAll('loading'); //关闭loading
+
+                    top.layer.msg("上传失败！");
+
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

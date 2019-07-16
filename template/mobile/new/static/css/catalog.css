@@ -1,0 +1,105 @@
+/*=========index-top========*/
+
+/*分类页面css*/
+.container{ width:100%; padding:0; overflow:hidden; margin:auto;position: absolute;top:60px;left:0}
+
+.category-box{ margin-top:-45px; height:100%; width:100%; overflow:hidden}
+.category1{  float:left; width:25%;background-color:#fff;}
+.category1 ul{width:100%; overflow:hidden;}
+.category1 li{ width:100%;height:50px;line-height:50px;background-color: #fff;font-size: 14px; overflow:hidden; text-align:center;color:#666}
+.category1 li.cur{color:#DE3535;  background:#f4f4f4}
+/* .category1 li.cur:before{ position:absolute; right:0; top:50%; margin-top:-5px; content:''; display:block;display: inline-block;border-width: 6px;border-color: transparent #fff transparent transparent;border-style: dashed solid dashed dashed;} */
+
+.category2{ float:left; width:75%; height:100%; background-color:#e9e9e9; }
+.category2 dl{ width:95%; margin:auto;overflow:hidden; padding-bottom:60px}
+.category2 dl>span{ display:block; width:100%;overflow:hidden; position:relative; }
+.category2 dl span img{ display:block; width:100%; height:auto}
+.category2 dl span em{ display:block; width:10px; font-size:12px; height:60px; position:absolute; right:0px; bottom:0px;
+ padding:25px 10px 25px 10px;background-color:rgba(27,27,27,0.5); color:#FFF; font-style:normal; line-height:150%; font-family:'宋体';} 
+
+.category2 dt{ width:100%; height:20px;margin-top:10px; margin-bottom:10px;}
+.category2 dt a{ display:block; height:20px;font-size:14px; line-height:20px;color:#666; }
+.category2 dd{ width:100%; overflow:hidden; margin-bottom:10px;background: #fff;
+    border-radius: 10px;}
+
+.fenimg{    width: 95%; overflow: hidden; margin:0 auto}
+.fen_img{width:33.3%; overflow:hidden;float: left; margin:0px; margin-bottom:5px;height:70px}
+.fen_img a{ display:block; width:90%;height:110px; margin:auto;overflow:hidden; background:#FFF; padding-top:3px;}
+.fen_img a span{ display:block; width:100%; height:70px;}
+.fen_img a span img{ display:block; width:70px;height:70px; margin:auto;}
+.fen_img a em{ display:block; width:90%; height:30px; margin:auto; text-align:center;font-size:14px; color:#999; line-height:30px;}
+
+.fen{width:33%;float:left; overflow:hidden;text-align:center;  height: 100px;padding-top: 10px; padding-bottom:10px}
+.fen img{
+    /* margin-top:20px; */
+    max-width:60%
+}
+/* .fen a{display:block;; height:35px; line-height:35px; margin-bottom:5px; text-align:center;font-size:14px; color:#666; background:#FFF} */
+
+/* 搜索�?*/
+.search-page body { background-color: #f2f2f2; }
+#head_search_box { width: 100%; position: fixed; top: 0; z-index: 5004; overflow: hidden; max-width: 640px;}
+.search_header .filtrate { background: none; color: #b6b6b6; }
+.search_header {position: relative; z-index: 100; height: 28px; background: #f6f6f6; padding: 7px 40px 7px 40px; border-bottom: 1px solid #eeeeee; }
+.search_header .back { z-index: 2; position: absolute; top: -2px; left: 0; height: 50px; padding-left: 40px; background: url("../images/newimg/order/backW.png") no-repeat 15px center; background-size: auto 16px; font-size: 15px; }
+.search_header .search { height: 14px; padding-left: 35px; position: relative; background:#fcf9f9; padding-top: 8px; padding-bottom: 8px; border-radius: 20px; 
+}
+.search_header .search .text {width:98%;border:none;line-height: 14px; outline: none; font-size: 14px; color:#666; display: block; background:#fcf9f9;  }
+.search_header .search .submit {width: 36px; height: 36px; position: absolute; left: 0; top: -2px; background: url("../images/newimg/goods/search.png") center center no-repeat; background-size: 16px 16px; border: none; border-radius: 5px; }
+.search_header .menu { z-index: 2; position: absolute; right: 0; top: -2px; width: 40px; height: 50px; background: url("../images/newimg/goods/msg.png") no-repeat center; background-size: 20px; line-height: 50px; font-size: 14px; transition: background .3s;  }
+.search_header .menu.active { background-image: url(../images/category/menu-active.png); background-size: 16px; }
+.search_header .menu.active:after { content: " "; display: block; position: absolute; right: 12px; bottom: -1px; width: 16px; height: 8px; background: url(../images/category/connector.png) no-repeat center 0; }
+body{
+    background:#f2f2f2
+}
+
+.goods_nav {
+    width: 30%;
+    float: right;
+    right: 5px;
+    overflow: hidden;
+    position: fixed;
+    margin-top: 25px;
+    z-index: 9999999
+  }
+
+  .fenimgs {
+    width: 100%;
+    height: 70px;
+  }
+
+  .fenimgs img {
+    max-width: 60%
+  }
+
+  .fen>a {
+    height: 110px
+  }
+
+  .category1 li {
+    background-color: rgb(244, 244, 244);
+  }
+
+  .fenimg span {
+    color: #666
+  }
+
+  .advertising {
+    display: block;
+    width: 250px;
+    height: 120px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .advertising img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .menu-left{
+      background:#fff
+  }
+  .menu-left ul li.active{
+      background:#f2f2f2
+  }

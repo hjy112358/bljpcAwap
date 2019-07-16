@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../../assets/css/layui.css">
+    <link rel="stylesheet" href="../../assets/css/mypublic.css">
+    <link rel="stylesheet" href="../../assets/css/view.css" />
+    <link rel="stylesheet" href="../../assets/css/setting/approve.css">
+    <script src="../../assets/js/jquery-3.1.1.min.js"></script>
+    <title></title>
+</head>
+
+<body class="layui-view-body">
+    <div class="layui-content">
+        <div class="layui-row ">
+            <div class="applybox">
+                <h3>我要开店</h3>
+                <div class="step hidden">
+                    <ul class="clearfix">
+                        <li class="on">
+                            <div class="stepWrap">
+                                <div class=" font-36">1</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">选择开店类型</p>
+                                    <p class="font-13 stepmsg">个人店铺，企业店铺</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="stepWrap">
+                                <div class=" font-36">2</div>
+                                <div class="stepDetail">
+                                    <p class=" font-13">阅读开店须知</p>
+                                    <p class="font-13 stepmsg">确认自己符合个人店铺的相关规定</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="stepWrap">
+                                <div class=" font-36">3</div>
+                                <div class="stepDetail">
+                                    <p class="font-13">申请开店认证</p>
+                                    <p class="font-13 stepmsg">需提供认证相关资料，等待审核通过</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 我要开店 -->
+                <div class="registryEntry hidden">
+                    <div>
+                        <img src="../../assets/images/reimage.png" alt="">
+                        <p class="font-20 storeClass">个人店铺</p>
+                        <p class="font-16 storegis">通过手机号码实名认证的商家创建的店铺，就是个人店铺</p>
+                        <a href="javascript:void(0)" class="font-20">创建个人店铺</a>
+                    </div>
+                    <div>
+                        <img src="../../assets/images/reimage.png" alt="">
+                        <p class="font-20 storeClass">企业店铺</p>
+                        <p class="font-16 storegis">通过手机号码企业认证的商家创建的店铺，就是企业店铺</p>
+                        <a href="javascript:void(0)" class="font-20 enterbtn">创建企业店铺</a>
+                    </div>
+                </div>
+
+
+                <!-- 开店须知 -->
+                <div class="noticebox hidden">
+                    <p>用户使用“搜豹在线商家在线入驻系统”前请认真阅读并理解本协议内容，本协议内容中以加粗方式显著标识的条款，请用户着重阅读、慎重考虑。
+                    </p>
+                    <p>1.本协议的订立
+                    </p>
+                    <p>在本网站（http://www.tp-shop.cn/）登记注册，且符合本网站商家入驻标准(详见链接：http://www.tp-shop.cn/join/）的用户（以下简称“商家”），在同意本协议全部条款后，方有资格使用“搜豹在线商家在线入驻系统”（以下简称“入驻系统”）申请入驻。一经商家点击“同意以上协议，下一步”按键，即意味着商家同意与本网站签订本协议并同意受本协议约束。
+                    </p>
+                    <p>2.入驻系统使用说明</p>
+
+                    <p> 2.1商家通过入驻系统提出入驻申请，并按照要求填写商家信息、提供商家资质资料后，由本网站审核并与有合作意向的商家联系协商合作相关事宜，经双方协商一致线下签订书面《店铺服务协议》（以下简称“协议”）且商家按照“协议”约定支付相应平台使用费及保证金等必要费用后，商家正式入驻本网站。本网站将为入驻商家开通商家后台系统（网址为:
+                        http://demo3.tp-shop.cn/Seller/)，商家可通过商家后台系统在本网站运营自己的入驻店铺。
+
+                        <p> 2.2
+                            商家以及本网站通过入驻系统做出的申请、资料提交及确认等各类沟通，仅为双方合作的意向以及本网站对商家资格审核的必备程序，除遵守本协议各项约定外，对双方不产生法律约束力。双方间最终合作事宜及运营规则均以“协议”的约定及商家后台系统公示的各项规则为准。
+                        </p>
+                        <p> 3.商家权利义务
+                        </p>
+                        <p> 3.1 商家应查看本网站公示的入驻商家标准，并确保资质符合本网站公示的基本要求，商家知悉并理解本网站将结合自身业务发展情况对商家进行选择。
+                        </p>
+                        <p> 3.2
+                            商家应按照本网站要求诚信提供入驻申请所需资料并如实填写相关信息，商家应确保提供的申请资料及信息真实、准确、完整、合法有效，经本网站审核通过后，商家不得擅自修改替换相应资料及主要信息。如商家提供的申请资料及信息不合法、不真实、不准确的，商家需承担因此引起的相应责任及后果，并且本网站有权立即终止商家使用入驻系统的权利。
+                        </p>
+                        <p> 3.3
+                            商家使用入驻系统提交的所有内容应不含有木马等软件病毒、政治宣传、或其他任何形式的“垃圾信息”、违法信息，且商家应按本网站规则使用入驻系统，不得从事影响或可能影响本网站或入驻系统正常运营的行为，否则，本网站有权清除前述内容，并有权立即终止商家使用入驻系统的权利。
+                        </p>
+                        <p> 3.4
+                            商家应注意查看入驻系统公示的入驻申请结果，如审核通过的商家，则按照本网站工作人员的通知按要求办理入驻的相关手续；如审批未通过的商家，则可自本网站通过入驻系统将审批结果告知商家（需商家登陆入驻系统查看）之日起15
+                            日内提出异议并提供相应资料，如审批仍未通过的，则商家同意提交的申请资料及信息本网站无需返还，由本网站自行处理。
+                        </p>
+                        <p> 3.5 商家不得以任何形式擅自转让或授权他人使用自己在本网站的用户帐号使用入驻系统，否则由此产生的不利后果均由商家自行承担。
+                        </p>
+                        <p> 4.本网站权利义务</p>
+                        <div class="noticeBtn">
+                            <a href="javascript:void(0)" style="margin-right:120px;background:#fcb7b7">上一步</a>
+                            <a href="javascript:void(0)">我已了解，继续开店</a>
+                        </div>
+                </div>
+
+
+                <!-- 开店认证 -->
+                <div class="authentication">
+                    <form class="layui-form" action="">
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">卖家入驻</span>
+                            <span class="titleRight font-12">用于入驻过程中接收平台官方反馈的入驻通知，请务必填写正确</span>
+                        </div>
+                        <div class="inputbox mainmsg">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">联系人姓名</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">联系人手机</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
+                                            class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">联系人电子邮箱</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                            class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">身份证号</label>
+                                    <div class="layui-input-inline" style="margin-right:0">
+                                        <input type="text" name="identity" lay-verify="identity" placeholder=""
+                                            autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">店铺信息</span>
+                            <span class="titleRight font-12">请输入真实的信息</span>
+                        </div>
+                        <div class="inputbox ">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">店铺名称</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="店铺名称">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">店铺主营大类</label>
+                                    <div class="layui-input-inline">
+                                        <select name="modules" lay-verify="required" lay-search="">
+                                            <option value="">请选择选择</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">店铺性质</label>
+                                    <div class="layui-input-inline">
+                                        <select name="modules" lay-verify="required" lay-search="">
+                                            <option value="">请选择选择</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">店铺登录主账号</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="identity" lay-verify="identity" placeholder=""
+                                            autocomplete="off" class="layui-input" placeholder="推荐人姓名">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">店铺负责人姓名</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="推荐人姓名">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">负责人手机号码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off"
+                                            class="layui-input" placeholder="推荐人手机号">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">负责人QQ号码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="identity" lay-verify="identity" autocomplete="off"
+                                            class="layui-input" placeholder="推荐人QQ">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">电子邮箱</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                            class="layui-input" placeholder="推荐人电子邮箱">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">店铺所在地</label>
+                                <div class="layui-input-inline ">
+                                    <select name="quiz1">
+                                        <option value="">请选择省</option>
+                                        <option value="浙江" selected="">浙江省</option>
+                                        <option value="你的工号">江西省</option>
+                                        <option value="你最喜欢的老师">福建省</option>
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline">
+                                    <select name="quiz2">
+                                        <option value="">请选择市</option>
+                                        <option value="杭州">杭州</option>
+                                        <option value="宁波" disabled="">宁波</option>
+                                        <option value="温州">温州</option>
+                                        <option value="温州">台州</option>
+                                        <option value="温州">绍兴</option>
+                                    </select>
+                                </div>
+                                <div class="layui-input-inline" style="margin-right:0">
+                                    <select name="quiz3">
+                                        <option value="">请选择县/区</option>
+                                        <option value="西湖区">西湖区</option>
+                                        <option value="余杭区">余杭区</option>
+                                        <option value="拱墅区">临安市</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div class="layui-form-item layui-form-text">
+                                <label class="layui-form-label">店铺详细地址</label>
+                                <div class="layui-input-block">
+                                    <textarea placeholder="输入你的信息" class="layui-textarea" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">身份证信息</span>
+                            <span class="titleRight font-12">请输入真实的信息</span>
+                        </div>
+                        <div class="inputbox ">
+                            <div class="layui-form-item">
+                                <div class="layui-inline" style="margin-right:0">
+                                    <label class="layui-form-label">身份证号</label>
+                                    <div class="layui-input-inline" style="margin-right:0">
+                                        <input type="text" name="identity" lay-verify="identity" placeholder=""
+                                            autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">身份证正面</label>
+                                    <div class="layui-upload layui-input-inline" id="imgbtn">
+                                        <div class="upimgbox upimg1">
+                                            <img src="" alt="" id="demo1">
+                                        </div>
+
+                                        <div class="imgbox ">
+                                            <img src="../../assets/images/cam.png" alt="">
+                                            <p>添加图片</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">身份证反面</label>
+                                    <div class="layui-upload layui-input-inline" id="imgbtn1">
+                                        <div class="upimgbox upimg2">
+                                            <img src="" alt="" id="demo2">
+                                        </div>
+                                        <div class="imgbox">
+                                            <img src="../../assets/images/cam.png" alt="">
+                                            <p>添加图片</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="authenTitle">
+                            <span class="titleLeft lableleft font-18">结算银行账号</span>
+                            <span class="titleRight font-12">请输入真实的信息</span>
+                        </div>
+                        <div class="inputbox " style="border-bottom:0">
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">银行开户名</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="银行开户名">
+                                    </div>
+                                </div>
+                                <div class="layui-inline" style="margin-right: 0">
+                                    <label class="layui-form-label">银行账号</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="银行账号">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">开户银行支行名称</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" name="" lay-verify="" autocomplete="off" class="layui-input"
+                                            placeholder="开户银行支行名称">
+                                    </div>
+                                </div>
+
+                                <div class="layui-inline" style="margin-right:0;">
+                                    <label class="layui-form-label">店铺所在地</label>
+                                    <div class="layui-input-inline " style="width:130px">
+                                        <select name="quiz1">
+                                            <option value="">请选择省</option>
+                                            <option value="浙江">浙江省</option>
+                                            <option value="你的工号">江西省</option>
+                                            <option value="你最喜欢的老师">福建省</option>
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline" style="margin-right:0;width:130px">
+                                        <select name="quiz3">
+                                            <option value="">请选择县/区</option>
+                                            <option value="西湖区">西湖区</option>
+                                            <option value="余杭区">余杭区</option>
+                                            <option value="拱墅区">临安市</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="authenticationbtn">
+                            <a href="javascript:void(0)" style="margin-right: 155px" class="btnNO">上一步</a>
+                            <a href="javascript:void(0)">等待审核</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/layui.all.js"></script>
+    <script src="../../assets/js/TouchSlide.1.1.js"></script>
+
+</body>
+<script>
+    layui.use('upload', function () {
+        var $ = layui.jquery
+            , upload = layui.upload;
+
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#imgbtn'
+            , url: '/upload/'
+            // , auto: false
+            , before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    $('.upimg1').css("z-index", 1)
+                    $('#demo1').attr('src', result); //图片链接（base64）
+
+                });
+            }
+            , done: function (res) {
+                //   //如果上传失败
+                //   if(res.code > 0){
+                //     return layer.msg('上传失败');
+                //   }
+                //上传成功
+            }
+            , error: function () {
+                //演示失败状态，并实现重 传
+                //   var demoText = $('#demoText');
+                //   demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                //   demoText.find('.demo-reload').on('click', function(){
+                //     uploadInst.upload();
+                //   });
+            }
+        });
+
+
+        //普通图片上传
+        var uploadInst = upload.render({
+            elem: '#imgbtn1'
+            , url: '/upload/'
+            // , auto: false
+            , before: function (obj) {
+                //预读本地文件示例，不支持ie8
+                obj.preview(function (index, file, result) {
+                    $('.upimg2').css("z-index", 1)
+                    $('#demo2').attr('src', result); //图片链接（base64）
+
+                });
+            }
+            , done: function (res) {
+                //   //如果上传失败
+                //   if(res.code > 0){
+                //     return layer.msg('上传失败');
+                //   }
+                //上传成功
+            }
+            , error: function () {
+                //演示失败状态，并实现重 传
+                //   var demoText = $('#demoText');
+                //   demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+                //   demoText.find('.demo-reload').on('click', function(){
+                //     uploadInst.upload();
+                //   });
+            }
+        });
+    })
+</script>
+
+</html>

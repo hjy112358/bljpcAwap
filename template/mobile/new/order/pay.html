@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="Generator" content="TPshop v1.1" />
+    <meta charset="UTF-8">
+    <!-- <title>支付</title> -->
+    <title></title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="__STATIC__/css/public.css?time=<?php echo time()?>" />
+    <link rel="stylesheet" href="__STATIC__/css/pay.css?time=<?php echo time()?>">
+    <link rel="stylesheet" href="__STATIC__/css/iconfont/iconfont.css">
+    <script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="__STATIC__/js/layer.js"></script>
+</head>
+
+<body class="">
+    <div class="wrap">
+        <!-- <div class=" flex jus-between align-c tophead">
+            <a href="javascript:history.back(-1)" class="iconfont icon-fanhui2"></a> 
+            <p class="font-18"></p>
+            <a href="javascript:void(0)"></a>
+        </div> -->
+
+        <div class="payUser" style="padding-top: 20px;">
+            <div class="userhead">
+                <if condition="$store_info['store_avatar']  eq '' ">
+                <img src="__STATIC__/images/newimg/usr/userimg.png" alt="">
+                <else/>
+                <img src="{$store_info['store_avatar']|imgtransformation}" alt="">
+                </if>
+            </div>
+            <p>{$store_info['store_name']}</p>
+        </div>
+
+        <div class="payDetail">
+            <p>转账金额</p>
+            <div class="payPrice flex">
+                <i>￥</i>
+                <input type="number" name="amount">
+            </div>
+            <div class="payType">
+                <p class="maincolor">转账方式</p>
+
+                <div class="paybox flex jus-between align-c ">
+                    <div class="wximg flex jus-start align-c payimg">
+                        <img src="__STATIC__/images/newimg/icon/wx.png" alt="" width="20" height="20">
+                        <p>微信转账</p>
+                    </div>
+                    <div class="checkbox">
+                        <img src="__STATIC__/images/newimg/icon/check.png" alt="" width="20" height="20"
+                            class="check hidden" data-paycode="appWeixinPay">
+                        <img src="__STATIC__/images/newimg/icon/checked.png" alt="" width="20" height="20"
+                            class=" checked" data-paycode="appWeixinPay">
+                    </div>
+                </div>
+                <div class="paybox flex jus-between align-c ">
+                    <div class="wximg flex jus-start align-c payimg">
+                        <img src="__STATIC__/images/newimg/icon/zfb.png" alt="" width="20" height="20">
+                        <p>支付宝转账</p>
+                    </div>
+                    <div class="checkbox">
+                        <img src="__STATIC__/images/newimg/icon/check.png" alt="" width="20" height="20" class="check"
+                            data-paycode="alipayMobile">
+                        <img src="__STATIC__/images/newimg/icon/checked.png" alt="" width="20" height="20"
+                            class="checked hidden" data-paycode="alipayMobile">
+                    </div>
+                </div>
+                <div class="paybox flex jus-between align-c ">
+                    <div class="wximg flex jus-start align-c payimg">
+                        <img src="__STATIC__/images/newimg/icon/yu.png" alt="" width="20" height="20">
+                        <p>余额转账</p>
+                    </div>
+                    <div class="checkbox">
+                        <img src="__STATIC__/images/newimg/icon/check.png" alt="" width="20" height="20" class="check"
+                            data-paycode="yue">
+                        <img src="__STATIC__/images/newimg/icon/checked.png" alt="" width="20" height="20"
+                            class="checked hidden" data-paycode="yue">
+                    </div>
+                </div>
+
+                <a href="javascript:void(0)" class="sendMsg" onclick="pay()">支付</a>
+
+                <input type="hidden" name="store_id" value="{$store_info['store_id']}">
+                <input type="hidden" name="user_id" value="{$user_id}">
+                <input type="hidden" name="pay_code" value="appWeixinPay">
+                <form action="{:U('Mobile/Payment/getCode')}" method="post" name="cart4_form" id="cart4_form">
+                    <input type="hidden" name="pay_radio" value="">
+                    <input type="hidden" name="under" value="1">
+                    <input type="hidden" name="order_id" value="">
+                </form>
+
+               
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    $(function () {
+        // function check(_this){
+        //     var thisnow=$(_this);
+        //     var check=thisnow.attr("data-check");
+        //     if(check=='1'){
+        //         thisnow.find(".checked").removeClass("hidden");
+        //         thisnow.find(".check").addClass("hidden");
+        //         thisnow.attr("data-check","0");
+        //     }else{
+        //         thisnow.find(".checked").addClass("hidden");
+        //         thisnow.find(".check").removeClass("hidden");
+        //         thisnow.attr("data-check","1");
+        //     }
+        // }
+        $(".payType .paybox").each(function(){
+            var _this=$(this);
+            _this.on("click",function(){
+                var thisnow=$(this);
+                thisnow.find(".check").addClass("hidden");
+                thisnow.find(".checked").removeClass("hidden");
+                thisnow.siblings().find(".checked").addClass("hidden");
+                thisnow.siblings().find(".check").removeClass("hidden");
+                var pay_code = thisnow.find(".checked").data("paycode");
+                $("input[name='pay_code']").val(pay_code);
+
+            })
+        })
+
+
+    })
+
+    function pay() {
+        var store_id = $("input[name='store_id']").val();
+        var user_id = $("input[name='user_id']").val();
+        var pay_code = $("input[name='pay_code']").val();
+        var amount = $("input[name='amount']").val();
+        var under = 1;
+
+        if (amount == '') {
+            layer.open({
+                content: '请输入金额'
+                , skin: 'msg'
+                , time: 2 //2秒后自动关闭
+            });
+        }else{
+            var reg = /^\d+(?:\.\d{2})?$/;
+            if(reg.test(amount)==false){
+                    layer.open({
+                    content: '输入金额格式不准确'
+                    , skin: 'msg'
+                    , time: 2 //2秒后自动关闭
+                });
+            }
+
+
+        }
+
+        $.ajax({
+            url: "{:U('Mobile/Cart/order2')}",
+            data: { store_id: store_id, user_id: user_id, pay_code: pay_code, amount: amount, under: under },
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+             
+                if (data['status'] == '1') {
+                    var pay_radio = 'pay_code='+pay_code;
+                    $("input[name='order_id']").val(data['order_id']);
+                    $("input[name='pay_radio']").val(pay_radio);
+                    if (pay_code == 'yue') {
+                        $.ajax({
+                            url: "{:url('cart/payticket')}",
+                            data: {order_id: data['order_id'],under:under},
+                            type: 'post',
+                            success:function(e){
+                                if(e.status == '1'){
+                                    alert(e['msg']);
+                                    window.location.href = "/mobile/order/orderPayStatus/status/1";
+                                }
+
+                            }
+
+                        })
+
+                    } else {
+                        $('#cart4_form').submit();
+                        return;
+
+
+                    }
+
+
+                }
+                console.log(data);
+            }
+
+
+
+        })
+
+
+
+
+
+
+
+
+    }
+
+</script>
+
+</html>

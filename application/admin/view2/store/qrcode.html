@@ -1,0 +1,101 @@
+<include file="public/layout" />
+
+<body style="background-color: rgb(255, 255, 255); overflow: auto; cursor: default; -moz-user-select: inherit;">
+  <div id="append_parent"></div>
+  <div id="ajaxwaitid"></div>
+  <div class="page">
+    <div class="fixed-bar">
+      <div class="item-title">
+        <div class="subject">
+          <h3>店铺管理</h3>
+          <h5>网站系统店铺索引与管理</h5>
+        </div>
+        <div class="main-content" id="mainContent">
+          <div class="tabmenu">
+            <ul class="tab pngFix">
+              <li <if condition="ACTION_NAME eq 'store_setting'">class="active"
+                <else />class="normal"</if>><a href="{:U('Store/store_setting')}">二维码</a></li>
+
+            </ul>
+          </div>
+          <div class="ncsc-form-default">
+            <if condition="$store_qrcode['store_qrcode'] eq '' ">
+              <div id="logos">
+                <button onclick="changess()" id="click_on">点击</button>
+                <img src="" class="qrcode" alt="二维码展示" id="qrcode" />
+              </div>
+              <input type="hidden" name="store_id" value="{$store_id}">
+              <div><button onclick="save_qrcode()">保存二维码</button></div>
+              <else/>
+
+              <div id="logos">
+                <img src="{$store_qrcode['store_qrcode']}" class="qrcode" alt="二维码展示" id="qrcode" />
+              </div>
+              <input type="hidden" name="store_id" value="{$store_id}">
+              <!-- <div><button onclick="save_qrcode()">保存二维码</button></div> -->
+            </if>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- 操作说明 -->
+
+  </div>
+  <script>
+    function changess() {
+      var logos = document.getElementById('logos');
+      var store_id = $("input[name='store_id']").val();
+
+      $.ajax({
+        type: "GET",
+        url: "{:url('store/qrcodes')}",
+        data: { store_id: store_id },
+        dataType: "json",
+        success: function (r) {
+          if (r.code == 200) { //console.log(r); 
+            var path = 'data:image/png;base64,' + r.data; //给img的sec赋值。
+            console.log(path);
+            //$("#logos").html("<img src=" + path + ">");
+            $("#qrcode").attr('src', path);
+            $("#click_on").css('display', 'none');
+
+            // logos.html("<img src=" + path + ">");
+            // console.log(logos.html("<img src=" + path + ">"));
+          } else {
+            alert(r.err);
+          }
+        }
+      });
+    }
+
+
+    function save_qrcode() {
+      var store_id = $("input[name='store_id']").val();
+      var qr_url = $("#qrcode").attr("src");
+
+      $.ajax({
+        type: 'POST',
+        url: "{:url('store/save_qrcode')}",
+        data: { store_id: store_id, qr_url: qr_url },
+        success: function (data) {
+          console.log(data);
+          if (data['status'] == '1') {
+            alert(data['msg']);
+
+            window.location.reload()
+          } else {
+            alert(data['msg']);
+          }
+
+        }
+
+      })
+
+
+    }
+
+  </script>
+</body>
+
+</html>
